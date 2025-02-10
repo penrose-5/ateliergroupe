@@ -1,0 +1,33 @@
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .header a,
+    .header p {
+        margin: 5px 0;
+        font-size: 12px;
+    }
+
+    .recto .title {
+        font-size: 2rem;
+        margin-bottom: 10vh;
+    }
+
+    .presentation {
+        font-size: 12px;
+        padding: 0.5rem;
+    }
+
+    .recto .footer {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .asterisk {
+        display: none;
+    }
+}

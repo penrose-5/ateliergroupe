@@ -1,0 +1,181 @@
+.verso {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    /* Ensure the content is in a single column */
+    position: absolute;
+    height: 100%;
+
+    visibility: hidden;
+    opacity: 0;
+    background: rgb(20, 20, 20);
+    color: rgb(230, 230, 230);
+}
+
+.verso.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.verso .header,
+.verso .footer {
+    color: rgb(230, 230, 230);
+    padding: 1rem;
+    text-align: center;
+}
+
+.verso .header {
+    z-index: 15;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Three equal columns */
+    /* align-items: center; */
+    justify-content: center;
+
+    /* Ensures text is centered within each grid item */
+    height: 54px;
+    /* margin: 0 20px; */
+    border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+
+.verso .header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.verso .header a:hover {
+    text-decoration: underline;
+}
+
+.verso .main {
+    color: rgb(230, 230, 230);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.verso .typing {
+    font-size: 3rem;
+    white-space: nowrap;
+    border-right: 3px solid;
+    display: inline-block;
+    animation: blink 0.7s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.verso .manifesto {
+    position: absolute;
+    bottom: 54px;
+    color: rgb(230, 230, 230);
+    font-size: 14px;
+    /* Place in the main content area of the grid */
+    padding: 1rem;
+    width: 100%;
+    line-height: 1.5;
+}
+
+.verso .footer {
+    font-family: 'Times New Roman', Times, serif;
+    /* margin: 0 20px; */
+    color: rgb(111, 111, 111);
+    height: 54px;
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(230, 230, 230, 1);
+}
+
+/* Smooth transition for all elements */
+.verso * {
+    transition: opacity 0.3s ease;
+}
+
+/* Fade-out effect for verso */
+.verso.fade-out .header,
+.verso.fade-out .footer,
+.verso.fade-out .typing {
+    opacity: 0;
+}
+
+.verso.fade-out .presentation,
+.verso.fade-out .asterisk {
+    opacity: 1;
+}
+
+
+
+
+/* Grid Layout */
+.slide-container {
+    z-index: 55;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* Text on the left, form on the right */
+    margin: 10px;
+    align-items: center;
+    max-width: 800px;
+    padding: 20px;
+    border: 2px solid white;
+    position: absolute;
+    bottom: 54px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s ease-in-out;
+
+}
+
+/* When the div is visible */
+.show {
+    visibility: visible;
+    bottom: 64px;
+    opacity: 1;
+}
+
+/* Typography & Spacing */
+.newsletter-text h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.newsletter-text p {
+    font-size: 14px;
+    color: white;
+    margin-top: 5px;
+}
+
+/* Form */
+.newsletter-form {
+    display: flex;
+    /* gap: 10px; */
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid black;
+    font-size: 14px;
+}
+
+.newsletter-form button {
+    background: rgb(20, 20, 20);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid rgb(20, 20, 20)
+}
+
+.newsletter-form button:hover {
+    color: rgb(20, 20, 20);
+    background-color: white;
+}

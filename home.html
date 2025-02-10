@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATERLIERGROUPE</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.png">
+  <link rel="stylesheet" href="style/web-recto.css">
+  <link rel="stylesheet" href="style/web-verso.css">
+  <link rel="stylesheet" href="style/mob-recto.css">
+  <link rel="stylesheet" href="style/mob-verso.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Helvetica, sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- RECTO Section -->
+  <div class="recto section">
+    <header class="header">
+      <a href="mailto:info@ateliergroupe.ch" style="text-align: left;">info@ateliergroupe.ch</a>
+      <a href="https://instagram.com/ateliergroupech" target="_blank" style="text-align: center;">Instagram</a>
+      <p style="text-align: right;">56 Bois-Gourmand, 1234 Geneva</p>
+    </header>
+
+    <main class="main" onclick="toggleView()">
+      <p class="title">ATELIERGROUPE</p><span class="asterisk">*</span>
+    </main>
+    <div class="presentation">
+      <p>The room is rectangular; so is the project: a wooden mask. It outlines an entrance, erases another one, yet
+        nothing has changed. It defines a room ready to pretend it is its double: Archizoom’s exhibition room.
+        Negotiation takes place. The partition wall ensures the permanence of an existing qualitative flexible space by
+        responding to two specific problems: poor acoustic and a lack of means of organization. Freeing itself from its
+        primary function, it becomes the generator of an architecture that divides and organizes by regulating the
+        intensity of the coexistence of different programs. Project Room is about architecture.</p>
+    </div>
+    <footer class="footer">
+      <p>© ATELIERGROUPE 2025 By Frederik Dahlqvist, Albin Mehmeti, Alexander Wegener</p>
+    </footer>
+  </div>
+
+  <!-- VERSO Section -->
+  <div class="verso section">
+    <header class="header">
+      <a href="mailto:info@ateliergroupe.ch" style="text-align: left;">info@ateliergroupe.ch</a>
+      <a href="https://instagram.com/ateliergroupech" target="_blank" style="text-align: center;">Instagram</a>
+      <p style="text-align: right;">56 Bois-Gourmand, 1234 Geneva</p>
+    </header>
+
+    <main class="main"" onclick="toggleView()">
+      <p class="typing" id="typing"></p>
+    </main>
+
+    <footer class="footer">
+      <p>© ATELIERGROUPE 2025 By Frederik Dahlqvist, Albin Mehmeti, Alexander Wegener</p>
+    </footer>
+  </div>
+
+  <script src="scripts/recto-verso.js"></script>
+  <script src="scripts/asterisk.js"></script>
+</body>
+
+</html>
