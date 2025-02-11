@@ -22,7 +22,7 @@ function toggleView() {
 }
 
 
-const text = "WE ARE OPENING...";
+const text = "OPENING ";
 let index = 0;
 function typeWriter() {
   if (index < text.length) {
