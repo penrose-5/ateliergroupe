@@ -58,15 +58,7 @@
 .verso .typing {
     font-size: 3rem;
     white-space: nowrap;
-    border-right: 3px solid;
     display: inline-block;
-    animation: blink 0.7s steps(2, start) infinite;
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
 }
 
 .verso .manifesto {
@@ -178,4 +170,40 @@
 .newsletter-form button:hover {
     color: rgb(20, 20, 20);
     background-color: white;
+}
+
+
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .header a,
+    .header p {
+        margin: 5px 0;
+        font-size: 12px;
+    }
+
+    .verso .typing {
+        font-size: 2rem;
+        margin-bottom: 10vh;
+    }
+
+    .presentation {
+        font-size: 12px;
+        padding: 0.5rem;
+    }
+
+    .verso .footer {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .asterisk {
+        display: none;
+    }
 }

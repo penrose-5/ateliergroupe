@@ -4,70 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ATERLIERGROUPE</title>
+  <title>ATELIERGROUPE</title>
   <link rel="icon" type="image/x-icon" href="img/favicon.png">
-  <link rel="stylesheet" href="style/web-recto.css">
-  <link rel="stylesheet" href="style/web-verso.css">
-  <link rel="stylesheet" href="style/mob-recto.css">
-  <link rel="stylesheet" href="style/mob-verso.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Helvetica, sans-serif;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-    }
-  </style>
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="style/pages/index.css">
 </head>
 
 <body>
-  <!-- RECTO Section -->
-  <div class="recto section">
-    <header class="header">
-      <a href="mailto:mail@ateliergroupe.ch" style="text-align: left;">mail@ateliergroupe.ch</a>
-      <a href="https://instagram.com/ateliergroupech" target="_blank" style="text-align: center;">Instagram</a>
-      <p style="text-align: right;">56 Bois-Gourmand, 1234 Geneva</p>
-    </header>
+  <div class="section">
+    <div id="header-placeholder"></div>
 
-    <main class="main" onclick="toggleView()">
-      <p class="title">ATELIERGROUPE</p><span class="asterisk">*</span>
+
+    <main class="main" onclick="toggle_view()">
+      <p class="title">ATELIERGROUPE</p>
     </main>
-    <div class="presentation">
-      <p>The room is rectangular; so is the project: a wooden mask. It outlines an entrance, erases another one, yet
-        nothing has changed. It defines a room ready to pretend it is its double: Archizoom’s exhibition room.
-        Negotiation takes place. The partition wall ensures the permanence of an existing qualitative flexible space by
-        responding to two specific problems: poor acoustic and a lack of means of organization. Freeing itself from its
-        primary function, it becomes the generator of an architecture that divides and organizes by regulating the
-        intensity of the coexistence of different programs. Project Room is about architecture.</p>
+
+    <div class="presentation" onclick="toggle_view()">
+      <p>Given our contemporary condition of overwhelming information, ATELIERGROUPE aims to define precise operational
+        strategies to achieve a voluntary, deliberate, and non-random transformation of our environment. In order to
+        organize the project, ATELIERGROUPE is taking <span class="asterisk"><i>notes from architecture</i>*</span>,
+        using it as a tool able to define the context and formalize the given. Eventually, ATELIERGROUPE’s projects are
+        intentionally cultural, as mise-en-scène in relation to the territory it engages, defined by both its ambitious
+        character and the obstacles it has to tackle.
     </div>
-    <footer class="footer">
-      <p>© ATELIERGROUPE 2025 By Frederik Dahlqvist, Albin Mehmeti, Alexander Wegener</p>
-    </footer>
+
+    <div id="footer-placeholder"></div>
+
   </div>
-
-  <!-- VERSO Section -->
-  <div class="verso section">
-    <header class="header">
-      <a href="mailto:mail@ateliergroupe.ch" style="text-align: left;">mail@ateliergroupe.ch</a>
-      <a href="https://instagram.com/ateliergroupech" target="_blank" style="text-align: center;">Instagram</a>
-      <p style="text-align: right;">56 Bois-Gourmand, 1234 Geneva</p>
-    </header>
-
-    <main class="main"" onclick="toggleView()">
-      <p class="typing" id="typing"></p>
-    </main>
-
-    <footer class="footer">
-      <p>© ATELIERGROUPE 2025 By Frederik Dahlqvist, Albin Mehmeti, Alexander Wegener</p>
-    </footer>
-  </div>
-
-  <script src="scripts/recto-verso.js"></script>
+  <script src="scripts/components.js"></script>
+  <script src="scripts/toggle.js"></script>
   <script src="scripts/asterisk.js"></script>
 </body>
 

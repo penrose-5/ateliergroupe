@@ -1,0 +1,12 @@
+body {
+    font-family: var(--font-primary);
+    line-height: var(--line-height);
+    font-size: var(--font-size-base);
+    color: var(--color-primary);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--heading-font-weight);
+    line-height: var(--heading-line-height);
+    margin-top: var(--heading-margin-top);
+  }

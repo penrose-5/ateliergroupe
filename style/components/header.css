@@ -1,0 +1,47 @@
+.header {
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.header {
+    z-index: 15;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Three equal columns */
+    /* align-items: center; */
+    justify-content: center;
+
+    /* Ensures text is centered within each grid item */
+    height: 54px;
+    /* margin: 0 20px; */
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    border-bottom: 2.5px solid rgba(20, 20, 20, 1);
+}
+
+.header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .header a,
+    .header p {
+        margin: 5px 0;
+        font-size: 12px;
+    }
+
+}

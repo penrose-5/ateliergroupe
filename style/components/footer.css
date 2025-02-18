@@ -1,0 +1,49 @@
+/* Desktop */
+
+.footer {
+    padding: 1rem;
+    text-align: center;
+    margin-left: var(--left-margin);
+    margin-right: var(--right-margin);
+    color: var(--color-secondary);
+    height: 54px;
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    border-top: 2.5px solid var(--color-primary);
+}
+
+
+
+.footer {
+    font-size: 10px;
+    text-align: center;
+}
+
+
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .profile-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recto .title {
+        font-size: 2rem;
+        margin-bottom: 10vh;
+    }
+
+    .presentation {
+        font-size: 12px;
+        padding: 0.5rem;
+    }
+
+}

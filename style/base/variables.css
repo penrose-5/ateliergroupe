@@ -1,0 +1,27 @@
+:root {
+    /* Colors */
+    --color-primary: rgb(20, 20, 20);
+    --color-secondary: rgb(111, 111, 111);
+
+    /* Typography */
+    --font-primary: Helvetica, sans-serif;
+    --line-height: 1.23;
+    --font-size-base: 16px;
+
+    /* Margins */
+    --left-margin: 1rem;
+    --right-margin: 1rem;
+
+}
+
+
+@media (max-width: 768px) {
+    :root {
+        /* Typography */
+        --font-size-base: 12px;
+
+        /* Margins */
+        --left-margin: 0;
+        --right-margin: 0;
+    }
+}
