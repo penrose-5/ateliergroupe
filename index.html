@@ -6,8 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ATELIERGROUPE</title>
   <link rel="icon" type="image/x-icon" href="img/favicon.png">
-  <link rel="stylesheet" href="style/main.css">
-  <link rel="stylesheet" href="style/pages/index.css">
+  <link rel="stylesheet" href="style/main.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" href="style/pages/index.css?v=<?php echo time(); ?>">
+  <!-- <link rel="stylesheet" href="style/main.css"> -->
+  <!-- <link rel="stylesheet" href="style/pages/index.css"> -->
 </head>
 
 <body>
@@ -19,13 +21,22 @@
       <p class="title">ATELIERGROUPE</p>
     </main>
 
+    <span class="notes-from-architecture-image">
+      <img src="images/notes-from.png" alt="notes from architecture">
+    </span>
+
     <div class="presentation" onclick="toggle_view()">
-      <p>Given our contemporary condition of overwhelming information, ATELIERGROUPE aims to define precise operational
-        strategies to achieve a voluntary, deliberate, and non-random transformation of our environment. In order to
-        organize the project, ATELIERGROUPE is taking <span class="asterisk"><i>notes from architecture</i>*</span>,
-        using it as a tool able to define the context and formalize the given. Eventually, ATELIERGROUPE’s projects are
-        intentionally cultural, as mise-en-scène in relation to the territory it engages, defined by both its ambitious
-        character and the obstacles it has to tackle.
+      <p>
+        <span class="hide">
+          Given our contemporary condition of overwhelming information, ATELIERGROUPE aims to define precise operational
+          strategies to achieve a voluntary, deliberate, and non-random transformation of our environment. In order to
+          organize the project, ATELIERGROUPE is taking
+        </span>
+        <span class="asterisk"><b><i><a href="/research/2024/notes-from-architecture.html">notes from
+                architecture</a></i> *</b></span><span class="hide">, using it as a tool able to define the context and formalize the given. Eventually, ATELIERGROUPE’s projects
+          are
+          intentionally cultural, as <i>mise-en-scène</i> in relation to the territory it engages, defined by both its
+          ambitious character and the obstacles it has to tackle.</span>
     </div>
 
     <div id="footer-placeholder"></div>

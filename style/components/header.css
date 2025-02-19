@@ -1,10 +1,6 @@
-.header {
+header {
     padding-top: 1rem;
     text-align: center;
-}
-
-.header {
-    z-index: 15;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /* Three equal columns */
@@ -20,26 +16,26 @@
     border-bottom: 2.5px solid rgba(20, 20, 20, 1);
 }
 
-.header a {
+header a {
     text-decoration: none;
     color: inherit;
 }
 
-.header a:hover {
+header a:hover {
     text-decoration: underline;
 }
 
 
 @media (max-width: 768px) {
-    .header {
+    header {
         flex-direction: column;
         height: auto;
         padding: 10px;
         font-size: 12px;
     }
 
-    .header a,
-    .header p {
+    header a,
+    header p {
         margin: 5px 0;
         font-size: 12px;
     }

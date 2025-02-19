@@ -1,74 +1,62 @@
+---
+layout: default
+title: notes-from-architecture
+year: 2024
+permalink: /research/:year/:title/
+---
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ATELIERGROUPE</title>
-  <link rel="icon" type="image/x-icon" href="img/favicon.png">
-  <link rel="stylesheet" href="style/web-recto.css">
-  <link rel="stylesheet" href="style/web-verso.css">
-  <link rel="stylesheet" href="style/mob-recto.css">
-  <link rel="stylesheet" href="style/mob-verso.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Helvetica, sans-serif;
-    }
+  <title>Notes from architecture - ATELIERGROUPE Research 2024</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="/style/main.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" href="/style/pages/research.css?v=<?php echo time(); ?>">
 
-    body {
-      display: flex;
-      flex-direction: column;
-    }
-  </style>
 </head>
 
 <body>
-  <!-- RECTO Section -->
-  <div class="recto section">
-    <header class="header">
-      <a href="mailto:mail@ateliergroupe.ch" style="text-align: left;">mail@ateliergroupe.ch</a>
-      <a href="https://instagram.com/ateliergroupech" target="_blank" style="text-align: center;">Instagram</a>
-      <p style="text-align: right;">56 Bois-Gourmand, 1234 Geneva</p>
-    </header>
+  <div class="research-wrapper">
+    <div id="header-placeholder"></div>
 
-    <main class="main" onclick="toggleView()">
-      <p class="title">ATELIERGROUPE</p><span class="asterisk">*</span>
+    <main class="research-content">
+      <div class="research-headline">
+        <h2>Notes from architecture</h2>
+        <h6><a href="/">ATELIERGROUPE</a> <a href="/research">Research</a> – <i>2024, September</i></h6>
+      </div>
+
+      <div class="research-image">
+        <img src="/images/notes-from.png" alt="Notes from architecture">
+        <figcaption>Image caption text here.</figcaption>
+      </div>
+
+      <div class="research-article">
+        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+          atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
+          sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum
+          facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+          impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
+          repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et
+          voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
+          ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+          dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+          amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam
+          aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
+          laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
+          voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
+          pariatur?</p>
+      </div>
     </main>
-    <div class="presentation">
-      <p>The room is rectangular; so is the project: a wooden mask. It outlines an entrance, erases another one, yet
-        nothing has changed. It defines a room ready to pretend it is its double: Archizoom’s exhibition room.
-        Negotiation takes place. The partition wall ensures the permanence of an existing qualitative flexible space by
-        responding to two specific problems: poor acoustic and a lack of means of organization. Freeing itself from its
-        primary function, it becomes the generator of an architecture that divides and organizes by regulating the
-        intensity of the coexistence of different programs. Project Room is about architecture.</p>
-    </div>
-    <footer class="footer">
-      <p>© ATELIERGROUPE 2025 By Frederik Dahlqvist, Albin Mehmeti, Alexander Wegener</p>
-    </footer>
+
+    <div id="footer-placeholder"></div>
   </div>
-
-  <!-- VERSO Section -->
-  <div class="verso section">
-    <header class="header">
-      <a href="mailto:mail@ateliergroupe.ch" style="text-align: left;">mail@ateliergroupe.ch</a>
-      <a href="https://instagram.com/ateliergroupech" target="_blank" style="text-align: center;">Instagram</a>
-      <p style="text-align: right;">56 Bois-Gourmand, 1234 Genève</p>
-    </header>
-
-    <main class="main"" onclick="toggleView()">
-      <p class="typing" id="typing"></p>
-    </main>
-
-    <footer class="footer">
-      <p>© ATELIERGROUPE 2025 By Frederik Dahlqvist, Albin Mehmeti, Alexander Wegener</p>
-    </footer>
-  </div>
-
-  <script src="scripts/recto-verso.js"></script>
-  <script src="scripts/asterisk.js"></script>
+  <script src="/scripts/components.js"></script>
 </body>
 
 </html>

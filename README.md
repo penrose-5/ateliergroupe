@@ -45,28 +45,29 @@ your-repository/
 # TODO
 
 META
-- corriger le typo du titre
-- s'assurer du httpS
+- [X] corriger le typo du titre
+- [X] s'assurer du httpS
 - corriger adresse à  Bois-Gourmand 56
                       CH–1234, Genève
-- changer leur logo
+- [X] changer leur logo
+- [] fade-out juste le main, il faut que le header / footer reste non- faded entre about/index
 
-RECTO
-- thicken les separator
-- aligner parfaitement les marges des seperators & textes
-- changer le texte verso
-    - la position du texte apparait toujours avec les trois premieres lignes
-– on doit pouvoir scroller pour le voir en entier > 
-    - implique de faire distinguo entre touch & scroll
-    - cliquer, même sur le texte, nous fait acceder au verso;
-    - impliquer: régler l'hsitoire de z-index dudit texte
-- fonctionnalité astérisque-hidden
-    - éliminer l'acutel
-    - l'ajouter aux "notes from architecture*" du nouveau texte
-    - faire apparaître une image
+INDEX
+- [X] thicken les separator
+- [X] aligner parfaitement les marges des seperators & textes
+- [X] changer le texte verso
+- [] la position du texte apparait toujours avec les trois premieres lignes
+– [] on doit pouvoir scroller pour le voir en entier > 
+    > implique de faire distinguo entre touch & scroll
+    > cliquer, même sur le texte, nous fait acceder au about;
+    > implique: régler l'hsitoire de z-index dudit texte
+- [] fonctionnalité astérisque-hidden
+    - [] éliminer l'acutel
+    - [] l'ajouter aux "notes from architecture*" du nouveau texte
+    - [] faire apparaître une image
 
 
-VERSO
+ABOUT
 - l’image plein écran horizontale sur le web /zoom plein écran pour le télephone
 - ajouter les trois descirptions
     - 

@@ -1,24 +1,24 @@
-.section {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 500px;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+/* Desktop */
+/* Smooth transition for all elements */
+* {
+    transition: opacity 0.5s ease;
+}
 
+.section {
+    /* Ensure the content is in a single column */
     display: grid;
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 1fr;
-    /* Ensure the content is in a single column */
+
+    /* Ensure the content is fully covered */
     position: absolute;
     height: 100%;
-    background-color: white;
+    min-height: 400px;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 
 .main {
-    color: rgb(20, 20, 20);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,12 +30,11 @@
     user-select: none;
 }
 
+
 .presentation {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    color: rgb(20, 20, 20);
     font-size: 14px;
     /* Place in the main content area of the grid */
     padding: 1rem;
@@ -43,46 +42,49 @@
     line-height: 1.5;
 }
 
-
-/* Smooth transition for all elements */
- * {
-    transition: opacity 0.3s ease;
+.notes-from-architecture-image {
+    position: absolute;
+    width: 900px;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    /* Initially hidden */
+    transition: opacity .5s ease, visibility .5s ease;
 }
 
-/* Fade-out effect for Recto */
-.section.fade-out .header,
-.section.fade-out .footer,
+.notes-from-architecture-image.visible {
+    opacity: 1;
+    visibility: visible;
+    /* Make it visible when faded in */
+}
+
+/* Keep your existing fade-out effects */
+.section.fade-out header,
+.section.fade-out footer,
+.section.fade-out .hide,
 .section.fade-out .title {
     opacity: 0;
 }
 
-.section.fade-out .presentation,
-.section.fade-out .asterisk {
+/* Now we fade in the image when section has fade-out */
+.section.fade-out .notes-from-architecture-image {
     opacity: 1;
+    visibility: visible;
 }
 
 
 
 
-/* Desktop */
-.profile-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
+
 
 /* Tablet */
-@media (max-width: 1024px) {
-    .profile-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+@media (max-width: 1024px) {}
 
 /* Mobile: 3 columns */
 @media (max-width: 768px) {
-    .profile-grid {
-        grid-template-columns: 1fr;
-    }
-
     .title {
         font-size: 2rem;
         margin-bottom: 10vh;

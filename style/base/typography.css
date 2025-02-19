@@ -10,3 +10,11 @@ body {
     line-height: var(--heading-line-height);
     margin-top: var(--heading-margin-top);
   }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  a:hover {
+    text-decoration: underline;
+  }

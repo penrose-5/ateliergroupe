@@ -1,12 +1,19 @@
 const asterisk = document.querySelector('.asterisk');
-const recto = document.querySelector('.recto');
+const section = document.querySelector('.section');
+const notesImage = document.querySelector('.notes-from-architecture-image');
 
 // Apply fade-out effect when mouse enters the asterisk
 asterisk.addEventListener('mouseenter', () => {
-    recto.classList.add('fade-out');
+    section.classList.add('fade-out');
+    if (notesImage) {
+        notesImage.classList.add('visible'); // Add a class to fade it in
+    }
 });
 
 // Remove fade-out effect when mouse leaves the asterisk
 asterisk.addEventListener('mouseleave', () => {
-    recto.classList.remove('fade-out');
+    section.classList.remove('fade-out');
+    if (notesImage) {
+        notesImage.classList.remove('visible'); // Remove class to fade it out
+    }
 });
