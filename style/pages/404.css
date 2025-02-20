@@ -1,0 +1,62 @@
+/* Desktop */
+.section {
+    /* Ensure the content is in a single column */
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+
+    /* Ensure the content is fully covered */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    min-height: 400px;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;  /* Add this line */
+    align-items: center;
+    justify-content: center;
+}
+
+.e404 {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 2;
+}
+
+.e404-sub {
+    font-size: 1.25rem;
+}
+
+.e404-sub a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .e404 {
+        font-size: 3.3rem;
+        line-height: 1.6;
+    }
+    
+    .e404-sub {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile: 3 columns */
+@media (max-width: 768px) {
+    .e404 {
+        font-size: 2.8rem;
+    }
+    
+    .e404-sub {
+        width: 200px;
+        font-size: .9rem;
+        text-align: center;
+    }
+}
