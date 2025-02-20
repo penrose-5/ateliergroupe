@@ -1,19 +1,23 @@
 header {
-    padding-top: 1rem;
+    min-width: 400px;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* Three equal columns */
-    /* align-items: center; */
     justify-content: center;
+    align-items: center;
+    margin: 0 var(--right-margin);
+    padding: 1rem 0;
+    border-bottom: 2.5px solid var(--color-primary);
+}
 
-    /* Ensures text is centered within each grid item */
-    height: 54px;
-    /* margin: 0 20px; */
-    margin-left: 1rem;
-    margin-right: 1rem;
+header a,
+header span {
+    margin: 0 1px 0;
+}
 
-    border-bottom: 2.5px solid rgba(20, 20, 20, 1);
+.address-narrow {
+    display: none;
+    text-align: right;
 }
 
 header a {
@@ -25,19 +29,49 @@ header a:hover {
     text-decoration: underline;
 }
 
+/* Your existing header styles remain the same */
 
+/* Hide the narrow version by default (for wide screens) */
+.address-narrow {
+    display: none;
+}
+
+
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .notes-from-architecture-image {
+        width: 700px;
+    }
+
+    .address-wide {
+        display: none;
+        /* Hide the single-line version */
+    }
+
+    .address-narrow {
+        display: inline;
+
+        /* Show the version with line break */
+    }
+
+}
+
+/* Mobile: 3 columns */
 @media (max-width: 768px) {
     header {
+        padding: 1rem;
+
         flex-direction: column;
         height: auto;
-        padding: 10px;
         font-size: 12px;
     }
 
     header a,
     header p {
-        margin: 5px 0;
         font-size: 12px;
+        padding: 0.5rem 0;
+
     }
 
 }

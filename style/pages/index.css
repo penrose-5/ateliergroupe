@@ -81,10 +81,19 @@
 
 
 /* Tablet */
-@media (max-width: 1024px) {}
+@media (max-width: 1024px) {
+    .notes-from-architecture-image {
+        width: 700px;
+    }
+    
+}
 
 /* Mobile: 3 columns */
 @media (max-width: 768px) {
+    .notes-from-architecture-image {
+        width: 80%;
+    }
+
     .title {
         font-size: 2rem;
         margin-bottom: 10vh;

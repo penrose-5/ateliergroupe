@@ -3,6 +3,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     
     color: var(--color-secondary);
     font-size: 12px;
@@ -14,29 +15,22 @@ footer {
     margin-left: var(--left-margin);
 }
 
+.narrow-footer {
+    display: none;
+}
 
 
 /* Tablet */
 @media (max-width: 1024px) {
-    .profile-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-    .profile-grid {
-        grid-template-columns: 1fr;
+    .narrow-footer {
+        display: inline;
     }
-
-    .recto .title {
-        font-size: 2rem;
-        margin-bottom: 10vh;
+    .wide-footer {
+        display: none;
     }
-
-    .presentation {
-        font-size: 12px;
-        padding: 0.5rem;
-    }
-
 }
