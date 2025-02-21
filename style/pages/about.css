@@ -1,169 +1,97 @@
-.verso {
+/* Desktop */
+html,
+body {
+    /* Remove default margins and padding that could cause unwanted space */
+    margin: 0;
+    padding: 0;
+    /* Ensure the html and body take up full height */
+    min-height: 100vh;
+}
+
+body {
+    /* Set up the background image */
+    background-image: url("/images/about/fond.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* This is the crucial property that keeps the background fixed */
+    background-attachment: fixed;
+}
+
+.section {
     display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 1fr;
+    min-height: 100vh;
     /* Ensure the content is in a single column */
     position: absolute;
-    height: 100%;
-
-    visibility: hidden;
-    opacity: 0;
-    background: rgb(20, 20, 20);
     color: white;
 }
 
-.verso.active {
-    visibility: visible;
-    opacity: 1;
-}
-
-
-.verso .main {
-    color: white;
-    display: flex;
+.main {
+    display: grid;
+    grid-template-rows: auto 2fr auto;
+    grid-template-columns: 1fr;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 }
 
-.verso .typing {
-    font-size: 3rem;
-    white-space: nowrap;
-    display: inline-block;
-}
-
-.verso .manifesto {
-    position: absolute;
-    bottom: 54px;
-    color: white;
-    font-size: 14px;
-    /* Place in the main content area of the grid */
-    padding: 1rem;
-    width: 100%;
-    line-height: 1.5;
-}
-
-
-/* Smooth transition for all elements */
-.verso * {
-    transition: opacity 0.3s ease;
-}
-
-/* Fade-out effect for verso */
-.verso.fade-out .header,
-.verso.fade-out .footer,
-.verso.fade-out .typing {
-    opacity: 0;
-}
-
-.verso.fade-out .presentation,
-.verso.fade-out .asterisk {
-    opacity: 1;
-}
-
-
-
-
-/* Grid Layout */
-.slide-container {
-    z-index: 55;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    /* Text on the left, form on the right */
-    margin: 10px;
-    align-items: center;
-    max-width: 800px;
-    padding: 20px;
-    border: 2px solid white;
-    position: absolute;
-    bottom: 54px;
-    opacity: 0;
-    visibility: hidden;
-    transition: .5s ease-in-out;
-
-}
-
-/* When the div is visible */
-.show {
-    visibility: visible;
-    bottom: 64px;
-    opacity: 1;
-}
-
-/* Typography & Spacing */
-.newsletter-text h2 {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-}
-
-.newsletter-text p {
-    font-size: 14px;
-    color: white;
-    margin-top: 5px;
-}
-
-/* Form */
-.newsletter-form {
+.opening {
     display: flex;
-    /* gap: 10px; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    user-select: none;
+    height: 60vh;
 }
 
-.newsletter-form input {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid black;
-    font-size: 14px;
+.profiles-wrapper {
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    padding: 1rem 1rem 2rem;
+    gap: 2rem;
 }
 
-.newsletter-form button {
-    background: rgb(20, 20, 20);
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-weight: bold;
-    border: 1px solid rgb(20, 20, 20)
+.profile h4 {
+    font-weight: 700;
+    line-height: 1.75;
 }
 
-.newsletter-form button:hover {
-    color: rgb(20, 20, 20);
-    background-color: white;
+.profile p {
+    text-align: justify;
+    line-height: 1.23;
 }
 
 
+/* Tablet */
+@media (max-width: 1024px) {}
 
+/* Mobile */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-        font-size: 12px;
+    .notes-from-architecture-image {
+        width: 80%;
     }
 
-    .header a,
-    .header p {
-        margin: 5px 0;
-        font-size: 12px;
-    }
-
-    .verso .typing {
+    .opening {
         font-size: 2rem;
         margin-bottom: 10vh;
     }
 
-    .presentation {
-        font-size: 12px;
-        padding: 0.5rem;
+    .profiles-wrapper {
+        grid-auto-flow: row;
+        grid-template-columns: 1fr;
     }
 
-    .verso .footer {
-        font-size: 10px;
-        text-align: center;
+    .profile h4 {
+        font-weight: 700;
+        line-height: 1.75;
+        font-size: larger;
     }
-
-    .asterisk {
-        display: none;
+    
+    .profile p {
+        text-align: justify;
+        font-size: larger;
+        line-height: 2;
     }
 }
