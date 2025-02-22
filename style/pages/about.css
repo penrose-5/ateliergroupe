@@ -43,6 +43,7 @@ body {
     font-size: 3rem;
     user-select: none;
     height: 60vh;
+    background-color: aqua;
 }
 
 .profiles-wrapper {
@@ -51,6 +52,7 @@ body {
     grid-auto-flow: column;
     padding: 1rem 1rem 2rem;
     gap: 2rem;
+    width: 100%;
 }
 
 .profile h4 {
@@ -61,6 +63,11 @@ body {
 .profile p {
     text-align: justify;
     line-height: 1.23;
+}
+
+header, footer {
+    border-color: white;
+    /* color:white; */
 }
 
 
@@ -81,6 +88,12 @@ body {
     .profiles-wrapper {
         grid-auto-flow: row;
         grid-template-columns: 1fr;
+        width: 100vw;
+        place-items: center;
+        /* align-items: center;
+        justify-content: center; */
+
+        padding: 2rem;
     }
 
     .profile h4 {
@@ -92,6 +105,8 @@ body {
     .profile p {
         text-align: justify;
         font-size: larger;
-        line-height: 2;
+        line-height: 1.5;
+        max-width: 450px;
+
     }
 }
