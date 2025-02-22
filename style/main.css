@@ -17,3 +17,8 @@ body {
     flex-direction: column;
 }
 
+html,
+body,
+.page-wrapper {
+    overflow-x: hidden;
+}

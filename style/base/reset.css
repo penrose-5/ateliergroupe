@@ -21,7 +21,3 @@ html {
     max-width: 100%;
     height: auto;
   }
-
-  .page-wrapper {
-    overflow-x: hidden;
-  }
