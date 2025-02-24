@@ -12,6 +12,9 @@
     --left-margin: 1rem;
     --right-margin: 1rem;
 
+    /* Title top position */
+    --title-top: 70vh;
+
 }
 
 
@@ -23,5 +26,8 @@
         /* Margins */
         --left-margin: 0;
         --right-margin: 0;
+
+        /* --title-top: calc(100vh-200px); */
+
     }
 }

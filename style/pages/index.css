@@ -31,9 +31,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     font-size: 3rem;
     user-select: none;
+    height: var(--title-top);
     min-height: 300px;
     /* margin: 50px 0; */
     cursor: pointer;
@@ -138,12 +138,12 @@ footer {
 
     .title {
         font-size: 2rem;
-        margin-bottom: 10vh;
     }
 
     .presentation {
-        font-size: 12px;
-        padding: 0.5rem;
+        font-size: larger;
+        padding: 2rem;
+        line-height: 1.5;
     }
 
 }

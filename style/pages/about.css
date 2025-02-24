@@ -1,6 +1,6 @@
 /* Desktop */
 body {
-    background-image: url("/images/about/fond.png");
+    background-image: url("/images/about/cover-03.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -44,7 +44,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: var(--title-top);
     font-size: 3rem;
     user-select: none;
     min-height: 300px;
@@ -109,10 +109,6 @@ footer {
 
 /* Mobile */
 @media (max-width: 768px) {
-    .notes-from-architecture-image {
-        width: 80%;
-    }
-
     .opening {
         font-size: 2rem;
         margin-bottom: 10vh;
@@ -125,7 +121,6 @@ footer {
         place-items: center;
         /* align-items: center;
         justify-content: center; */
-
         padding: 2rem;
     }
 
