@@ -3,13 +3,23 @@ function toggle_view() {
   const body = document.body;
   body.style.transition = 'opacity 0.2s ease'; // Smooth fade-out effect
   body.style.opacity = '0';
-
+  
   setTimeout(() => {
-    const nextPage = location.href.includes('about.html') ? './' : './about.html';
-    window.location.href = nextPage;
-  }, 500); // Wait for fade-out to complete before navigation
+      // Get current path and log it for debugging
+      const currentPath = window.location.pathname;
+      console.log('Current path:', currentPath);
+      
+      // Check if we're in the about directory
+      const isInAbout = currentPath.includes('/about');
+      console.log('Is in about:', isInAbout);
+      
+      // Determine next page
+      const nextPage = isInAbout ? '/' : '/about/';
+      console.log('Navigating to:', nextPage);
+      
+      window.location.href = nextPage;
+  }, 500);
 }
-
 
 const text = "OPENING ";
 let index = 0;

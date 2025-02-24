@@ -6,42 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ATELIERGROUPE</title>
   <link rel="icon" type="image/x-icon" href="/images/meta/favicon.png">
-  <!-- <link rel="stylesheet" href="/style/main.css?v=<?php echo time(); ?>"> -->
-  <!-- <link rel="stylesheet" href="/style/pages/index.css?v=<?php echo time(); ?>"> -->
   <link rel="stylesheet" href="/style/main.css">
   <link rel="stylesheet" href="/style/pages/index.css">
 </head>
 
 <body>
+  <!-- 0. Page wrapper -->
   <div class="section page-wrapper">
-    <div id="header-placeholder"></div>
 
+    <!-- 1. Header -->
+    <header id="header-placeholder"></header>
 
-    <main class="main" onclick="toggle_view()">
-      <p class="title">ATELIERGROUPE</p>
-    </main>
-
+    <!-- Non important span -->
     <span class="notes-from-architecture-image"><a href="/notes/">
         <img src="/images/notes/notes-from-architecture.png" alt="notes from architecture">
       </a>
     </span>
 
-    <div class="presentation">
-      <p>
-        <span class="hide">
-          Given our contemporary condition of overwhelming information, ATELIERGROUPE aims to define precise operational
-          strategies to achieve a voluntary, deliberate, and non-random transformation of our environment. In order to
-          organize the project, ATELIERGROUPE is taking
-        </span>
-        <span class="asterisk"><a href="/notes/" style="text-decoration: underline;">notes from
-                architecture</a>*</span><span class="hide">, using it as a tool able to define the context and
-          formalize the given. Eventually, ATELIERGROUPE’s projects
-          are
-          intentionally cultural, as <i>mise-en-scène</i> in relation to the territory it engages, defined by both its
-          ambitious character and the obstacles it has to tackle.</span>
-    </div>
+    <!-- 2. MAIN -->
+    <main class="main" onclick="toggle_view()">
+      <!-- 2.1 TITLE SECTION -->
+      <section class="title">
+        <p>ATELIERGROUPE</p>
+      </section>
 
-    <div id="footer-placeholder"></div>
+      <!-- 2.2 PRESENTATION TITLE -->
+      <section class="presentation">
+        <p><span class="hide">Given our contemporary condition of overwhelming information, ATELIERGROUPE aims to define
+            precise operational strategies to achieve a voluntary, deliberate, and non-random transformation of our
+            environment. In order to organize the project, ATELIERGROUPE is taking</span><span class="asterisk"><a
+              href="/notes/" style="text-decoration: underline;"><strong>notes from
+                architecture</strong></a>*</span><span class="hide">, using it as a tool able to define the context and
+            formalize the given. Eventually, ATELIERGROUPE’s projects are intentionally cultural, as
+            <i>mise-en-scène</i> in relation to the territory it engages, defined by both its ambitious character and
+            the obstacles it has to tackle.</span>
+      </section>
+
+    </main>
+
+
+    <!-- 3. FOOTER -->
+    <footer id="footer-placeholder"></footer>
 
   </div>
   <script src="/scripts/components.js" defer></script>
