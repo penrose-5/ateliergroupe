@@ -10,44 +10,65 @@
   <link rel="stylesheet" href="/style/pages/about.css">
 </head>
 
-<div class="section page-wrapper">
-  <header id="header-placeholder"></header>
+<body>
+  <!-- 0. Page wrapper -->
+  <div class="section page-wrapper">
 
-  <main class="main" onclick="toggle_view()">
-    <p class="opening">OPENING</p>
+    <!-- 1. Header -->
+    <header id="header-placeholder"></header>
 
-    <div class="profiles-wrapper">
-      <div class="profile">
-        <h4>Frederik Dahlqvist (Genève, 1997)</h4>
-        <p>graduated in Architecture at the Swiss Federal Institute of Technology in Lausanne (EPFL, Master of Science
-          in Architecture). He worked at DOGMA in Brussels, participating in rigorous theoretical thinking and critical
-          research on the role of architecture in society. He was involved in teaching at LIF EPFL. Frederik is also
-          engaged with the designing of furniture and specific objects.</p>
-      </div>
+    <!-- 2. MAIN -->
+    <main class="main">
+      <!-- 2.1 OPENING SECTION -->
+      <a href="/">
+        <section class="opening">
+          <p>OPENING</p>
+        </section>
+      </a>
 
-      <div class="profile">
-        <h4>Albin Mehmeti (Genève, 1998)</h4>
-        <p>graduated in Architecture at the Swiss Federal Institute of Technology in Lausanne (EPFL, Master of Science
-          in Architecture). He worked at Seyler & Lucan architectes-urbanistes in Paris, where he addressed the housing
-          question by dealing with typological studies. He contributed to teaching programs at EPFL, collaborating
-          essentially with Jo Taillieu and Nicola Braghieri. Albin is also active in painting architecture.</p>
-      </div>
+      <!-- 2.2 FOUNDER PROFILES SECTION -->
+      <section class="profiles-wrapper">
+        <div class="profile">
+          <h4>Frederik Dahlqvist (Genève, 1997)</h4>
+          <p>graduated in Architecture at the Swiss Federal Institute of Technology in Lausanne (EPFL, Master of Science
+            in Architecture). He worked at DOGMA in Brussels, participating in rigorous theoretical thinking and
+            critical
+            research on the role of architecture in society. He was involved in teaching at LIF EPFL. Frederik is also
+            engaged with the designing of furniture and specific objects.</p>
+        </div>
 
-      <div class="profile">
-        <h4>Alexander Wegener (Lausanne, 1996)</h4>
-        <p>graduated in Architecture at the Swiss Federal Institute of Technology in Lausanne (EPFL, Master of Science
-          in Architecture) and at the Accademia di Architettura di Mendrisio, where he has contributed to the
-          publications of Office Without Office. He worked for OFFICE KGDVS in Brussels, where the question of form and
-          its relationship to the city play a central role, as well as for Studio Paola Viganò in Brussels, one of the
-          leading voices in the European debate on socio-ecological transition, particularly in the context of the Grand
-          Genève.</p>
-      </div>
-    </div>
-  </main>
+        <div class="profile">
+          <h4>Albin Mehmeti (Genève, 1998)</h4>
+          <p>graduated in Architecture at the Swiss Federal Institute of Technology in Lausanne (EPFL, Master of Science
+            in Architecture). He worked at Seyler & Lucan architectes-urbanistes in Paris, where he addressed the
+            housing
+            question by dealing with typological studies. He contributed to teaching programs at EPFL, collaborating
+            essentially with Jo Taillieu and Nicola Braghieri. Albin is also active in painting architecture.</p>
+        </div>
 
-  <footer id="footer-placeholder"></footer>
+        <div class="profile">
+          <h4>Alexander Wegener (Lausanne, 1996)</h4>
+          <p>graduated in Architecture at the Swiss Federal Institute of Technology in Lausanne (EPFL, Master of Science
+            in Architecture) and at the Accademia di Architettura di Mendrisio, where he has contributed to the
+            publications of Office Without Office. He worked for OFFICE KGDVS in Brussels, where the question of form
+            and
+            its relationship to the city play a central role, as well as for Studio Paola Viganò in Brussels, one of the
+            leading voices in the European debate on socio-ecological transition, particularly in the context of the
+            Grand
+            Genève.</p>
+        </div>
+      </section>
 
-</div>
-<script src="scripts/components.js" defer></script>
-<script src="scripts/toggle.js" defer></script>
+
+    </main>
+
+
+    <!-- 3. FOOTER -->
+    <footer id="footer-placeholder"></footer>
+
+  </div>
+  <script src="/scripts/components.js" defer></script>
+  <script src="/scripts/asterisk.js" defer></script>
+</body>
+
 </html>

@@ -1,50 +1,67 @@
 /* Desktop */
-html,
 body {
-    /* Remove default margins and padding that could cause unwanted space */
-    margin: 0;
-    padding: 0;
-    /* Ensure the html and body take up full height */
-    min-height: 100vh;
-}
-
-body {
-    /* Set up the background image */
     background-image: url("/images/about/fond.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    /* This is the crucial property that keeps the background fixed */
     background-attachment: fixed;
 }
 
-.section {
-    display: grid;
+.page-wrapper {
+    position: relative;
     min-height: 100vh;
-    /* Ensure the content is in a single column */
-    position: absolute;
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-areas:
+        "header"
+        "opening"
+        "profiles-wrapper"
+        "footer";
+}
+
+
+header {
+    grid-area: header;
     color: white;
 }
 
+footer {
+    grid-area: footer;
+}
+
+
 .main {
     display: grid;
-    grid-template-rows: auto 2fr auto;
-    grid-template-columns: 1fr;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+        "opening"
+        "profiles-wrapper";
+    color: white;
 }
 
 .opening {
+    grid-area: opening;
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
+    align-items: center;
+    height: 100%;
     font-size: 3rem;
     user-select: none;
-    height: 60vh;
-    background-color: aqua;
+    min-height: 300px;
+    /* margin: 50px 0; */
+    cursor: pointer;
 }
+
+.main a:hover {
+    text-decoration: none;
+}
+
+
+/* .opening p {
+    position: absolute;
+    width: 100%;
+    top: 45vh;
+} */
 
 .profiles-wrapper {
     display: grid;
@@ -65,11 +82,27 @@ body {
     line-height: 1.23;
 }
 
-header, footer {
+header,
+footer {
     border-color: white;
-    /* color:white; */
 }
 
+
+/* FORCE VERTICAL POSITION */
+/* @media (max-height: 250px) {
+    .opening {
+        align-self: center;
+        min-height: unset;
+        margin: 50px 0;
+    }
+
+    .opening p {
+        position: unset;
+        width: unset;
+        top: unset;
+    }
+
+} */
 
 /* Tablet */
 @media (max-width: 1024px) {}
@@ -101,7 +134,7 @@ header, footer {
         line-height: 1.75;
         font-size: larger;
     }
-    
+
     .profile p {
         text-align: justify;
         font-size: larger;

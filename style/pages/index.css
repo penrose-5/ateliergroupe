@@ -17,7 +17,6 @@
 }
 
 
-
 .main {
     display: grid;
     grid-template-rows: 1fr auto;
@@ -29,19 +28,26 @@
 
 .title {
     grid-area: title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     font-size: 3rem;
     user-select: none;
-    text-align: center;
-    min-height: 200px;
-    margin: 50px 0;
+    min-height: 300px;
+    /* margin: 50px 0; */
+    cursor: pointer;
 }
 
-.title p {
+.main a:hover {
+    text-decoration: none;
+}
+
+/* .title p {
     position: absolute;
     width: 100%;
     top: 45vh;
-
-  }
+} */
 
 
 header {
@@ -99,21 +105,21 @@ footer {
 
 
 
-
-@media (max-height: 250px) {
+/* FORCE VERTICAL POSITION */
+/* @media (max-height: 250px) {
     .title {
         align-self: center;
         min-height: unset;
         margin: 50px 0;
     }
-    
+
     .title p {
         position: unset;
         width: unset;
         top: unset;
-      }
-    
-}
+    }
+
+} */
 
 
 /* Tablet */
