@@ -4,31 +4,22 @@
     transition: opacity 0.5s ease;
 }
 
-body {
-    background-image: url("/images/index/");
-}
-
 .page-wrapper {
     position: relative;
-    min-height: 100vh;
+    height: 100vh;
     display: grid;
-    grid-template-rows: auto 1fr auto auto;
-    grid-template-areas:
-        "header"
-        "contact"
-        "social"
-        "footer";
 }
 
 
 .main {
+    height: 100vh;
     display: grid;
     grid-template-rows: 1fr auto;
+    /* This gives the title section all remaining space */
     grid-template-areas:
-        "contact"
-        "social";
+        "title"
+        "presentation";
 }
-
 
 .title {
     grid-area: title;
@@ -37,29 +28,9 @@ body {
     align-items: center;
     font-size: 3rem;
     user-select: none;
-    height: var(--title-top);
-    min-height: 300px;
-    /* margin: 50px 0; */
+    min-height: 180px;
+    height: 100%;
     cursor: pointer;
-}
-
-.main a:hover {
-    text-decoration: none;
-}
-
-/* .title p {
-    position: absolute;
-    width: 100%;
-    top: 45vh;
-} */
-
-
-header {
-    grid-area: header;
-}
-
-footer {
-    grid-area: footer;
 }
 
 .presentation {
@@ -68,85 +39,37 @@ footer {
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    padding: 1rem;
+    padding: 2rem;
     width: 100%;
+    height: auto;
     line-height: 1.5;
 }
 
-.notes-from-architecture-image {
-    position: absolute;
-    width: 900px;
-    height: auto;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    visibility: hidden;
-    /* Initially hidden */
-    transition: opacity .5s ease, visibility .5s ease;
-}
-
-.notes-from-architecture-image.visible {
-    opacity: 1;
-    visibility: visible;
-    /* Make it visible when faded in */
-}
-
 /* Keep your existing fade-out effects */
-.section.fade-out header,
-.section.fade-out footer,
-.section.fade-out .hide,
-.section.fade-out .title {
+.page-wrapper.fade-out .hide,
+.page-wrapper.fade-out .title {
     opacity: 0;
 }
 
 /* Now we fade in the image when section has fade-out */
-.section.fade-out .notes-from-architecture-image {
+.page-wrapper.fade-out {
     opacity: 1;
     visibility: visible;
 }
 
 
 
-
-/* FORCE VERTICAL POSITION */
-/* @media (max-height: 250px) {
-    .title {
-        align-self: center;
-        min-height: unset;
-        margin: 50px 0;
-    }
-
-    .title p {
-        position: unset;
-        width: unset;
-        top: unset;
-    }
-
-} */
-
-
 /* Tablet */
-@media (max-width: 1024px) {
-    .notes-from-architecture-image {
-        width: 700px;
-    }
-
-}
+@media (max-width: 1024px) {}
 
 /* Mobile */
 @media (max-width: 768px) {
-    .notes-from-architecture-image {
-        width: 80%;
-    }
-
     .title {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .presentation {
-        font-size: larger;
-        padding: 2rem;
+        padding: 1rem;
         line-height: 1.5;
     }
 
