@@ -1,24 +1,31 @@
 /* Desktop */
-.section {
-    /* Ensure the content is in a single column */
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 1fr;
-
-    /* Ensure the content is fully covered */
-    position: absolute;
+html,
+body {
     height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    display: flex;
+    /* Changed from grid to simplify */
+    position: absolute;
+    height: 100vh;
+    /* Use viewport height instead of percentage */
     width: 100%;
     min-height: 400px;
     transition: opacity 0.5s ease, visibility 0.5s ease;
+    background-color: antiquewhite;
 }
-
 
 .main {
     display: flex;
-    flex-direction: column;  /* Add this line */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    flex-grow: 1;
+    /* Allow it to grow to fill the section */
 }
 
 .e404 {
@@ -42,7 +49,7 @@
         font-size: 3.3rem;
         line-height: 1.6;
     }
-    
+
     .e404-sub {
         font-size: 1rem;
     }
@@ -53,7 +60,7 @@
     .e404 {
         font-size: 2.8rem;
     }
-    
+
     .e404-sub {
         width: 200px;
         font-size: .9rem;
