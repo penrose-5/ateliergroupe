@@ -12,10 +12,10 @@
     box-sizing: border-box;
 }
 
-body {
+/* body {
     display: flex;
     flex-direction: column;
-}
+} */
 
 html,
 body,

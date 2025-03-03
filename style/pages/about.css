@@ -1,0 +1,150 @@
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Animation Definitions - Separated from elements */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Page Animation - Applied to content container instead of body */
+  .page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.4s ease-in forwards;
+  }
+  
+  /* Close Button - Fixed with improved positioning context */
+  .btn-close {
+    position: fixed; /* Keep as fixed */
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    width: 40px; /* Match the child element size */
+    height: 40px;
+    /* Important: Create own stacking context */
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  .close-project {
+    position: absolute; /* Changed from fixed to avoid nesting fixed elements */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    color: transparent;
+    white-space: nowrap;
+    text-indent: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: rgba(22, 27, 34, 0.6);
+    transform: scale(1); /* Initial state shown */
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .close-project:hover {
+    background-color: rgba(22, 27, 34, 1);
+    transform: scale(1.2);
+  }
+  
+  .close-project::after,
+  .close-project::before {
+    content: '';
+    position: absolute; /* Changed from fixed to avoid positioning issues */
+    width: 18px;
+    height: 2px;
+    top: 50%;
+    left: 50%;
+    background: #edeade;
+    transition: transform 0.5s;
+  }
+  
+  .close-project::before {
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  }
+  
+  .close-project::after {
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  }
+  
+  .close-project:hover::before,
+  .close-project:hover::after {
+    transform: translateX(-50%) translateY(-50%) rotate(-180deg);
+  }
+  
+  /* Article Styles */
+  .page-wrapper {
+    flex: 1;
+    width: 100%;
+    max-width: var(--base-width);
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .profiles-wrapper {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    width: 100vw;
+    font-size: 1rem;
+
+    place-items: center;
+    /* align-items: center;
+    justify-content: center; */
+    padding: 2rem;
+}
+
+.profile h4 {
+    font-size: 12px;
+    line-height: 1.2;
+    font-size: larger;
+}
+
+.profile p {
+    text-align: justify;
+    line-height: 1.5;
+    max-width: 450px;
+
+}
+  
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .research-content {
+      padding: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .menu-bar {
+      width: 100%;
+      left: 0;
+    }
+    
+    .btn-close {
+      top: 13px;
+      left: 13px;
+      height: 36px;
+      width: 36px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .btn-close {
+      top: 2px;
+      left: 2px;
+      height: 2rem;
+      width: 2rem;
+    }
+  }

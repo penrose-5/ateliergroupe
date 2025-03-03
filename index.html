@@ -4,26 +4,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us – ATELIERGROUPE</title>
+  <title>ATELIERGROUPE</title>
   <link rel="icon" type="image/x-icon" href="/images/meta/favicon.png">
   <link rel="stylesheet" href="/style/main.css">
-  <link rel="stylesheet" href="/style/pages/about.css">
   <link rel="stylesheet" href="/style/pages/index.css">
 </head>
+<style>
+  body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-<body style="background-image: url('/images/about/cover-03.jpg');">
+  }
+</style>
+
+<body>
   <!-- 0. Page wrapper -->
   <div class="section page-wrapper">
 
-    <!-- 1. Header -->
-    <!-- <header id="header-placeholder"></header> -->
-
     <!-- 2. MAIN -->
     <main class="main">
+
       <!-- 2.1 TITLE SECTION -->
-      <a href="/about/">
-        <section class="title">
-          <p>ATELIERGROUPE</p>
+      <a href="/contact/">
+        <section class="title" title="click to swipe">
+          <p>OPENING</p>
         </section>
       </a>
 
@@ -32,7 +37,7 @@
         <p><span class="hide">Given our contemporary condition of overwhelming information, ATELIERGROUPE aims to define
             precise operational strategies to achieve a voluntary, deliberate, and non-random transformation of our
             environment. In order to organize the project, ATELIERGROUPE is taking </span><span class="asterisk"><a
-              href="/notes/" title="click to go to notes from architecture" style="font-style: italic;"><strong>notes
+              href="/notes-from/" title="click to go to notes from architecture" style="font-style: italic;"><strong>notes
                 from
                 architecture</strong></a> *</span><span class="hide">, using it as a tool able to define the context and
             formalize the given. Eventually, ATELIERGROUPE’s projects are intentionally cultural, as
@@ -42,18 +47,52 @@
 
     </main>
 
-    <!-- 3. FOOTER -->
-    <!-- <footer id="footer-placeholder"></footer> -->
-
   </div>
+  <script>
+    const asterisk = document.querySelector('.asterisk');
+    const section = document.querySelector('.section');
 
-  <style>
-    main {
-      height: 100vh;
+
+
+    // Device supports hover (likely a desktop or laptop)
+    if (window.matchMedia('(hover: hover)').matches) {
+      // Apply fade-out effect when mouse enters the asterisk
+      asterisk.addEventListener('mouseenter', () => {
+        section.classList.add('fade-out');
+        if (notesImage) {
+          notesImage.classList.add('visible'); // Add a class to fade it in
+        }
+      });
+
+      // Remove fade-out effect when mouse leaves the asterisk
+      asterisk.addEventListener('mouseleave', () => {
+        section.classList.remove('fade-out');
+        if (notesImage) {
+          notesImage.classList.remove('visible'); // Remove class to fade it out
+        }
+      });
     }
-  </style>
-  <!-- <script src="/scripts/components.js" defer></script> -->
-  <script src="/scripts/asterisk.js" defer></script>
+
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Specify your image file names here (all from the same folder)
+      const images = [
+        '/images/index/cover-01.jpg',
+        '/images/index/cover-02.jpg',
+        '/images/index/cover-03.jpg',
+        '/images/index/cover-05.jpg',
+        '/images/index/cover-06.jpg'
+      ];
+
+      // Get a random image from the array
+      const randomIndex = Math.floor(Math.random() * images.length);
+      const selectedImage = images[randomIndex];
+
+      // Set the random background image
+      document.body.style.backgroundImage = `url('${selectedImage}')`;
+    });
+  </script>
 </body>
 
 </html>
