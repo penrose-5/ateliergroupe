@@ -47,7 +47,6 @@ main {
   display: grid;
   place-items: center;
   text-align: left;
-  user-select: none;
   margin: 0;
   padding: 2rem 0 1rem 0;
 }
