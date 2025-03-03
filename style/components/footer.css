@@ -4,12 +4,9 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
-    
     color: var(--color-secondary);
     font-size: 12px;
-    
     height: 54px;
-    
     border-top: 2.5px solid var(--color-primary);
     margin-right: var(--right-margin);
     margin-left: var(--left-margin);
