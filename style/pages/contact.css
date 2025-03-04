@@ -87,8 +87,8 @@ main {
 
 }
 
-.about-section svg {
-  height: 15px;
+.social-section svg {
+  height: 17px;
   vertical-align: top;
 }
 
@@ -125,6 +125,10 @@ footer {
     /* font-size: 1.15rem; */
     font-size: 13px;
     padding: 2rem;
+  }
+
+  .social-section svg {
+  height: 10px;
   }
 
   .contact-section h1 {
