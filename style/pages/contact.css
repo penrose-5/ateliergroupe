@@ -117,11 +117,13 @@ footer {
 
   .social-section {
     padding: 2rem;
-    font-size: 1.2rem;
+    font-size: 13px;
+    /* font-size: 1.2rem; */
   }
 
   .about-section {
-    font-size: 1.15rem;
+    /* font-size: 1.15rem; */
+    font-size: 13px;
     padding: 2rem;
   }
 
