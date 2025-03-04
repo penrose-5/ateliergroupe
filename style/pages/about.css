@@ -68,24 +68,9 @@ body {
 }
 
 @media (max-width: 768px) {
-  .menu-bar {
-    width: 100%;
-    left: 0;
-  }
 
-  .btn-close {
-    top: 13px;
-    left: 13px;
-    height: 36px;
-    width: 36px;
-  }
 }
 
 @media (max-width: 500px) {
-  .btn-close {
-    top: 2px;
-    left: 2px;
-    height: 2rem;
-    width: 2rem;
-  }
+
 }
