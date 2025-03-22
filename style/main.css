@@ -6,6 +6,7 @@
 @import 'components/btn-close.css';
 @import 'components/footer.css';
 @import 'components/header.css';
+@import 'components/search.css';
 
 * {
     margin: 0;
