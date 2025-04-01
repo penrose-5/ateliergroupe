@@ -1,40 +1,7 @@
-# ateliergroupe
-Hébergement du site web ateliergroupe
+# ATELIERGROUPE 
+ATELIERGROUPE is an architecture practice founded in Geneva, Switzerland.
+
+While every attempt of taking position risks to drift within overwhelming information, ATELIERGROUPE aims to elaborate precise operational strategies to achieve a voluntary and conscious transformation of the environment. As such, and in order to organize the project, ATELIERGROUPE takes notes from architecture, using it as a tool able to define the context and to formalize the given. By exploiting preexisting qualities through architecture, they might ultimately offer their presence to the landscape, eventually updating it. Thus, ATELIERGROUPE’s projects are defined by both their ambitious character and the obstacles they have to tackle.
 
 
-# Structure
-
-ateliergroupe/
-├── index.html
-├── css/
-│   ├── main.css
-│   ├── components/
-│   │   ├── header.css
-│   │   └── footer.css
-│   └── pages/
-│       ├── profiles.css
-│       └── research.css
-├── js/
-│   ├── components.js
-│   └── utils/
-│       └── date-formatter.js
-├── components/
-│   ├── header.html
-│   └── footer.html
-├── images/
-│   ├── profiles/
-│   │   ├── founder1/
-│   │   ├── founder2/
-│   │   └── founder3/
-│   └── research/
-├── profiles/
-│   ├── index.html          # Main profiles landing page
-│   ├── aw.html
-│   ├── am.html
-│   └── fd.html
-└── notes/
-    ├── index.html          # Research landing page
-    ├── 2025/               # Organizing by year
-    │   └── [...].html
-    └── 2024/
-        └── notes-from-architecture.html
+Visit the [website here](https://ateliergroupe.ch).
