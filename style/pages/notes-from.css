@@ -51,6 +51,10 @@ header h1 {
   font-weight: normal;
 }
 
+header h2 {
+  font-size: 1.2rem;
+}
+
 .article-meta {
   height: 1rem;
   color: var(--color-primary);
