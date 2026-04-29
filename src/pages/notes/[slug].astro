@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import VersoLayout from '../../layouts/VersoLayout.astro';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes', ({ data }) => data.published === true);
+  return notes.map((note) => ({
+    params: { slug: note.id },
+    props: { note },
+  }));
+}
+
+const { note } = Astro.props;
+const { Content } = await note.render();
+---
+
+<VersoLayout title={`${note.data.title} — ATELIERGROUPE`} activePage="notes">
+  <article>
+    <header class="article-header">
+      <h1 class="article-title">{note.data.title}</h1>
+      {note.data.subtitle && <p class="article-subtitle">{note.data.subtitle}</p>}
+      {note.data.displayDate && <p class="article-date">{note.data.displayDate}</p>}
+    </header>
+    <div class="article-body body-text">
+      <Content />
+    </div>
+    {note.data.pdf && (
+      <a class="article-pdf" href={note.data.pdf} target="_blank" rel="noopener noreferrer">
+        {note.data.pdfLabel || 'Download PDF'}
+      </a>
+    )}
+  </article>
+</VersoLayout>
