@@ -1,0 +1,13 @@
+---
+import { projects } from '../data/projects';
+
+const sorted = [...projects].sort((a, b) => a.rank - b.rank);
+---
+
+<ul class="projects-list">
+  {sorted.map((p) => (
+    <li>
+      {p.year} — {p.title}{p.location ? ` — ${p.location}` : ''}{p.note ? ` — ${p.note}` : ''}
+    </li>
+  ))}
+</ul>
