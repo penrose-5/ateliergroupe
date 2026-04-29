@@ -1,0 +1,394 @@
+/* ============================================================
+   ATELIERGROUPE — Global Stylesheet
+   ============================================================ */
+
+/* --- Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Base --- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: Helvetica, "Helvetica Neue", Arial, system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #111;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Links --- */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  opacity: 0.6;
+  transition: opacity 150ms;
+}
+
+/* --- Focus --- */
+:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* --- Skip link --- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* --- Column (verso layout) --- */
+.column {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* --- Verso main --- */
+.verso-main {
+  padding-top: 4rem;
+  padding-bottom: 6rem; /* clear fixed bottom menu */
+}
+
+@media (max-width: 767px) {
+  .verso-main {
+    padding-top: 2rem;
+  }
+}
+
+/* --- Section labels --- */
+.section-label {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+  margin: 3rem 0 1rem;
+}
+
+.section-label:first-child {
+  margin-top: 0;
+}
+
+/* --- Body text (justified) --- */
+.body-text {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.body-text p {
+  margin: 0 0 1em;
+}
+
+.body-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Lists / metadata (left-aligned) --- */
+.meta-text {
+  text-align: left;
+}
+
+/* --- Note entry in list --- */
+.note-entry {
+  margin-bottom: 2.5rem;
+}
+
+.note-entry-title {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.note-entry-title a {
+  text-decoration: none;
+}
+
+.note-entry-subtitle {
+  font-style: italic;
+  margin: 0.15rem 0 0;
+  font-size: 15px;
+}
+
+.note-entry-date {
+  font-size: 13px;
+  margin: 0.25rem 0 0;
+  color: #555;
+}
+
+.note-entry-excerpt {
+  margin: 0.5rem 0 0;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+/* --- News item --- */
+.news-item {
+  margin-bottom: 1.5rem;
+}
+
+.news-item-title {
+  font-weight: 400;
+  font-size: 15px;
+  margin: 0;
+}
+
+.news-item-date {
+  font-size: 13px;
+  color: #555;
+  margin: 0.15rem 0 0;
+}
+
+.news-item-body {
+  margin: 0.25rem 0 0;
+}
+
+/* --- Projects list --- */
+.projects-list {
+  list-style: none;
+  padding: 0;
+}
+
+.projects-list li {
+  margin-bottom: 0.35rem;
+  font-size: 15px;
+}
+
+/* --- People / office --- */
+.person {
+  margin-bottom: 1.5rem;
+}
+
+.person-name {
+  font-weight: 700;
+  font-size: 15px;
+  margin: 0 0 0.25rem;
+}
+
+.person-bio {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.person-bio p {
+  margin: 0 0 0.5em;
+}
+
+.person-bio p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Article page --- */
+.article-header {
+  margin-bottom: 2rem;
+}
+
+.article-title {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.article-subtitle {
+  font-style: italic;
+  margin: 0.15rem 0 0;
+}
+
+.article-date {
+  font-size: 13px;
+  color: #555;
+  margin: 0.25rem 0 0;
+}
+
+.article-body {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.article-body p {
+  margin: 0 0 1em;
+}
+
+.article-body p:last-child {
+  margin-bottom: 0;
+}
+
+.article-pdf {
+  margin-top: 2rem;
+  display: block;
+}
+
+/* --- Figures --- */
+figure {
+  margin: 1.5rem 0;
+}
+
+figcaption {
+  font-size: 13px;
+  color: #555;
+  margin-top: 0.35rem;
+}
+
+/* --- Bottom Menu --- */
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid #000;
+  z-index: 100;
+  padding: 1rem 1.25rem;
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  text-align: center;
+  font-size: 14px;
+}
+
+.bottom-menu a {
+  text-decoration: none;
+  position: relative;
+  display: inline;
+  cursor: pointer;
+}
+
+.bottom-menu a:hover {
+  opacity: 0.6;
+}
+
+/* Layout-stable bold: reserve max width with hidden bold pseudo-element */
+.bottom-menu a::before {
+  content: attr(data-text);
+  font-weight: 700;
+  visibility: hidden;
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.bottom-menu a[aria-current="page"] {
+  font-weight: 700;
+}
+
+.bottom-menu .separator {
+  margin: 0 0.15em;
+  user-select: none;
+}
+
+/* Ensure tap targets */
+@media (pointer: coarse) {
+  .bottom-menu a {
+    min-height: 32px;
+    line-height: 32px;
+  }
+}
+
+/* ============================================================
+   HOMEPAGE / RECTO
+   ============================================================ */
+
+.recto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 6vh 1.25rem 2rem;
+}
+
+.wordmark {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.wordmark:hover {
+  opacity: 0.6;
+  transition: opacity 150ms;
+}
+
+/* --- Slideshow --- */
+.slideshow-wrap {
+  position: relative;
+  width: 100%;
+  max-width: min(80vw, 1100px);
+  aspect-ratio: 3 / 2;
+  max-height: 70vh;
+  margin: 0 auto;
+}
+
+.slideshow-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 800ms ease;
+}
+
+.slideshow-wrap img.active {
+  opacity: 1;
+}
+
+/* No-JS fallback: show first image */
+.slideshow-wrap img:first-child {
+  opacity: 1;
+}
+
+/* When JS has initialised, it adds .js-slideshow to override first-child default */
+.slideshow-wrap.js-slideshow img:first-child {
+  opacity: 0;
+}
+
+.slideshow-wrap.js-slideshow img.active {
+  opacity: 1;
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .slideshow-wrap img {
+    transition: none;
+  }
+}
