@@ -1,0 +1,31 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  activePage: 'about' | 'notes';
+}
+
+const { activePage } = Astro.props;
+
+const items = [
+  { label: 'email', href: `mailto:${site.email}`, page: null },
+  { label: site.phone, href: site.phoneHref, page: null },
+  { label: 'about', href: '/about', page: 'about' as const },
+  { label: 'notes', href: '/notes', page: 'notes' as const },
+];
+---
+
+<nav class="bottom-menu" aria-label="Main navigation">
+  {items.map((item, i) => (
+    <>
+      {i > 0 && <span class="separator">/</span>}
+      <a
+        href={item.href}
+        data-text={item.label}
+        {...(item.page === activePage ? { 'aria-current': 'page' } : {})}
+      >
+        {item.label}
+      </a>
+    </>
+  ))}
+</nav>
