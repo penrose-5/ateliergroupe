@@ -1,0 +1,97 @@
+---
+/**
+ * HomeSlideshow.astro
+ * Renders all homepage images with a vanilla JS crossfade slideshow.
+ * No-JS fallback: first image visible, rest hidden.
+ * Reduced motion: random initial image, no cycling.
+ *
+ * Images are loaded from src/assets/home/ — they must exist at build time.
+ */
+
+// Dynamically import all WebP images from assets/home/
+const imageModules = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/home/*.webp',
+  { eager: true }
+);
+
+const images = Object.values(imageModules).map((mod) => mod.default);
+---
+
+{images.length > 0 ? (
+  <div class="slideshow-wrap" aria-label="Studio photographs">
+    {images.map((img, i) => (
+      <img
+        src={img.src}
+        width={img.width}
+        height={img.height}
+        alt={`ATELIERGROUPE — photograph ${i + 1}`}
+        loading="eager"
+        decoding="async"
+      />
+    ))}
+  </div>
+
+  <script>
+    function initSlideshow() {
+      const wrap = document.querySelector('.slideshow-wrap');
+      if (!wrap) return;
+
+      const imgs = Array.from(wrap.querySelectorAll('img'));
+      const count = imgs.length;
+      if (count === 0) return;
+
+      // Fisher-Yates shuffle
+      function shuffle(arr: number[]): number[] {
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+      }
+
+      function buildOrder(lastIndex?: number): number[] {
+        const indices = Array.from({ length: count }, (_, i) => i);
+        let order = shuffle(indices);
+        // Ensure no immediate repeat across cycles
+        if (lastIndex !== undefined && order[0] === lastIndex) {
+          const swapIdx = 1 + Math.floor(Math.random() * (count - 1));
+          [order[0], order[swapIdx]] = [order[swapIdx], order[0]];
+        }
+        return order;
+      }
+
+      wrap.classList.add('js-slideshow');
+
+      let order = buildOrder();
+      let pos = 0;
+
+      // Show initial image
+      imgs[order[0]].classList.add('active');
+
+      // Reduced motion: pick random image, do not cycle
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reducedMotion) return;
+
+      setInterval(() => {
+        const current = order[pos];
+        pos++;
+        if (pos >= order.length) {
+          order = buildOrder(current);
+          pos = 0;
+        }
+        const next = order[pos];
+        imgs[current].classList.remove('active');
+        imgs[next].classList.add('active');
+      }, 5000);
+    }
+
+    initSlideshow();
+  </script>
+) : (
+  <!-- PLACEHOLDER: No homepage images found in src/assets/home/. Add ~9 WebP images. -->
+  <div class="slideshow-wrap" aria-label="Studio photographs">
+    <p style="text-align:center; padding:2rem; color:#999;">
+      [Placeholder: Add homepage images to src/assets/home/]
+    </p>
+  </div>
+)}
