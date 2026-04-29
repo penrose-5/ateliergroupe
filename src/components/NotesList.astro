@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+
+const allNotes = await getCollection('notes', ({ data }) => data.published === true);
+const sorted = allNotes.sort((a, b) => a.data.rank - b.data.rank);
+---
+
+{sorted.map((note) => {
+  // Use first paragraph as excerpt
+  const bodyText = note.body || '';
+  const firstPara = bodyText.split('\n\n').find((p) => p.trim().length > 0) || '';
+  // Strip markdown emphasis
+  const excerpt = firstPara.replace(/[*_]/g, '').trim();
+
+  return (
+    <div class="note-entry">
+      <h2 class="note-entry-title">
+        <a href={`/notes/${note.id}`}>{note.data.title}</a>
+      </h2>
+      {note.data.subtitle && <p class="note-entry-subtitle">{note.data.subtitle}</p>}
+      {note.data.displayDate && <p class="note-entry-date">{note.data.displayDate}</p>}
+      {excerpt && <p class="note-entry-excerpt">{excerpt}</p>}
+    </div>
+  );
+})}
