@@ -1,0 +1,38 @@
+---
+import VersoLayout from '../layouts/VersoLayout.astro';
+import NewsList from '../components/NewsList.astro';
+import ProjectsList from '../components/ProjectsList.astro';
+import PeopleList from '../components/PeopleList.astro';
+
+const aboutStatement = `ATELIERGROUPE is an architecture practice based in Geneva, Switzerland.
+
+Given the contemporary condition of overwhelming information, ATELIERGROUPE aims to define precise operational strategies to achieve a voluntary, deliberate and non-random transformation of our environment.
+
+In order to organize the project, ATELIERGROUPE is taking <a href="/notes">notes from architecture*</a>, using it as a tool able to define the context and to formalize the given.
+
+Eventually, the projects are intentionally cultural, as mise en scène in relation to the territory it engages, defined by both its ambitious character and the obstacles it has to tackle.`;
+---
+
+<VersoLayout title="About — ATELIERGROUPE" activePage="about">
+  <h1 class="section-label">ABOUT</h1>
+  <div class="body-text">
+    {aboutStatement.split('\n\n').map((para) => (
+      <p set:html={para} />
+    ))}
+  </div>
+
+  <h2 class="section-label">NEWS</h2>
+  <div class="meta-text">
+    <NewsList />
+  </div>
+
+  <h2 class="section-label">PROJECTS</h2>
+  <div class="meta-text">
+    <ProjectsList />
+  </div>
+
+  <h2 class="section-label">OFFICE</h2>
+  <div class="meta-text">
+    <PeopleList />
+  </div>
+</VersoLayout>
