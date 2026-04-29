@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+
+const allPeople = await getCollection('people');
+const sorted = allPeople.sort((a, b) => a.data.rank - b.data.rank);
+---
+
+{sorted.map(async (person) => {
+  const { Content } = await person.render();
+  return (
+    <div class="person">
+      <p class="person-name">{person.data.name}</p>
+      <div class="person-bio">
+        <Content />
+      </div>
+    </div>
+  );
+})}
