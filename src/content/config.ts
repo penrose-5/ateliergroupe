@@ -32,6 +32,17 @@ const notes = defineCollection({
     pdf: z.string().optional(),
     pdfLabel: z.string().optional(),
     cover: z.string().optional(),
+    carousel: z.boolean().optional(),
+    carouselInstruction: z.string().optional(),
+    images: z
+      .array(
+        z.object({
+          src: z.string(),
+          alt: z.string(),
+          caption: z.string().optional(),
+        })
+      )
+      .optional(),
   }),
 });
 

@@ -21,6 +21,16 @@ const { Content } = await note.render();
       {note.data.subtitle && <p class="article-subtitle">{note.data.subtitle}</p>}
       {note.data.displayDate && <p class="article-date">{note.data.displayDate}</p>}
     </header>
+    {note.data.images && note.data.images.length > 0 && (
+      <div class="article-images">
+        {note.data.images.map((img) => (
+          <figure>
+            <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
+            {img.caption && <figcaption>{img.caption}</figcaption>}
+          </figure>
+        ))}
+      </div>
+    )}
     <div class="article-body body-text">
       <Content />
     </div>

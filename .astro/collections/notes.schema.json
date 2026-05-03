@@ -1,0 +1,76 @@
+{
+  "$ref": "#/definitions/notes",
+  "definitions": {
+    "notes": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "displayDate": {
+          "type": "string"
+        },
+        "rank": {
+          "type": "number"
+        },
+        "published": {
+          "type": "boolean",
+          "default": true
+        },
+        "pdf": {
+          "type": "string"
+        },
+        "pdfLabel": {
+          "type": "string"
+        },
+        "cover": {
+          "type": "string"
+        },
+        "carousel": {
+          "type": "boolean"
+        },
+        "carouselInstruction": {
+          "type": "string"
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "src": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "src",
+              "alt"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "date",
+        "rank"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
