@@ -16,28 +16,60 @@ const { Content } = await note.render();
 
 <VersoLayout title={`${note.data.title} — ATELIERGROUPE`} activePage="notes">
   <article>
-    <header class="article-header">
-      <h1 class="article-title">{note.data.title}</h1>
-      {note.data.subtitle && <p class="article-subtitle">{note.data.subtitle}</p>}
-      {note.data.displayDate && <p class="article-date">{note.data.displayDate}</p>}
+    <header class="note-full-header">
+      <h1 class="note-full-title">{note.data.title}</h1>
+      {note.data.displayDate && <p class="note-full-date">{note.data.displayDate}</p>}
     </header>
+
     {note.data.images && note.data.images.length > 0 && (
-      <div class="article-images">
-        {note.data.images.map((img) => (
-          <figure>
-            <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
-            {img.caption && <figcaption>{img.caption}</figcaption>}
-          </figure>
-        ))}
+      <div class="carousel" data-carousel>
+        <div class="carousel-stage">
+          {note.data.images.map((img, i) => (
+            <img
+              src={img.src}
+              alt={img.alt}
+              class:list={['carousel-img', { active: i === 0 }]}
+              loading={i === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+          ))}
+        </div>
+        <div class="carousel-info">
+          <span class="carousel-counter">1/{note.data.images.length}</span>
+          <span class="carousel-instruction">* {note.data.carouselInstruction || 'Click on the image to carousel them'}</span>
+        </div>
       </div>
     )}
-    <div class="article-body body-text">
+
+    <div class="note-full-body body-text">
       <Content />
     </div>
+
     {note.data.pdf && (
-      <a class="article-pdf" href={note.data.pdf} target="_blank" rel="noopener noreferrer">
+      <a class="note-full-pdf" href={note.data.pdf} target="_blank" rel="noopener noreferrer">
         {note.data.pdfLabel || 'Download PDF'}
       </a>
     )}
   </article>
+
+  <script>
+    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+      const imgs = carousel.querySelectorAll<HTMLImageElement>('.carousel-img');
+      const counter = carousel.querySelector('.carousel-counter');
+      const stage = carousel.querySelector('.carousel-stage') as HTMLElement | null;
+      if (!stage || imgs.length <= 1) return;
+
+      let current = 0;
+      stage.style.cursor = 'pointer';
+
+      stage.addEventListener('click', () => {
+        imgs[current].classList.remove('active');
+        current = (current + 1) % imgs.length;
+        imgs[current].classList.add('active');
+        if (counter) {
+          counter.textContent = `${current + 1}/${imgs.length}`;
+        }
+      });
+    });
+  </script>
 </VersoLayout>
