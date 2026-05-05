@@ -1,13 +1,124 @@
 ---
-import { projects } from '../data/projects';
+import { getCollection } from 'astro:content';
 
-const sorted = [...projects].sort((a, b) => a.rank - b.rank);
+const allProjects = await getCollection('projects', ({ data }) => data.published === true);
+const sorted = allProjects.sort((a, b) =>
+  Number(b.data.pinned) - Number(a.data.pinned) ||
+  b.data.rank - a.data.rank
+);
 ---
 
-<ul class="projects-list">
-  {sorted.map((p) => (
-    <li>
-      {p.year} — {p.title}{p.location ? ` — ${p.location}` : ''}{p.note ? ` — ${p.note}` : ''}
-    </li>
-  ))}
-</ul>
+{sorted.map(async (project) => {
+  const { Content } = await project.render();
+  const images = project.data.images || [];
+  const instruction = project.data.carouselInstruction || 'Click on the image to carousel them';
+
+  return (
+    <section class="project-full">
+      <header class="project-full-header">
+        <h2 class="project-full-title">{project.data.title}</h2>
+        {project.data.displayDate && <p class="project-full-date">{project.data.displayDate}</p>}
+      </header>
+
+      {images.length > 0 && (
+        <div class="carousel" data-carousel>
+          <div class="carousel-stage">
+            {images.map((img, i) => (
+              <img
+                src={img.src}
+                alt={img.alt}
+                class:list={['carousel-img', { active: i === 0 }]}
+                loading={i === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            ))}
+          </div>
+
+          <div class="carousel-info">
+            <span class="carousel-counter">1/{images.length}</span>
+            <span class:list={[
+              'carousel-instruction',
+              { 'is-static': images.length === 1 }
+            ]}>
+              {images.length === 1
+                ? images[0].alt
+                : `* ${instruction}`}
+            </span>
+          </div>
+        </div>
+      )}
+
+      <div class="project-full-body body-text" data-caption>
+        <div class="caption-content" data-caption-content>
+          <Content />
+        </div>
+
+        <button class="caption-toggle" data-caption-toggle hidden type="button">
+          Click to show full caption
+        </button>
+      </div>
+
+      {project.data.pdf && (
+        <a class="project-full-pdf" href={project.data.pdf} target="_blank" rel="noopener noreferrer">
+          {project.data.pdfLabel || 'Download PDF'}
+        </a>
+      )}
+    </section>
+  );
+})}
+
+<script>
+  document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+    const imgs = carousel.querySelectorAll<HTMLImageElement>('.carousel-img');
+    const counter = carousel.querySelector('.carousel-counter');
+    const instruction = carousel.querySelector('.carousel-instruction');
+    const stage = carousel.querySelector('.carousel-stage') as HTMLElement | null;
+
+    if (!stage || imgs.length <= 1) return;
+
+    let current = 0;
+    let hasStarted = false;
+
+    stage.style.cursor = 'pointer';
+
+    stage.addEventListener('click', () => {
+      imgs[current].classList.remove('active');
+
+      current = (current + 1) % imgs.length;
+
+      imgs[current].classList.add('active');
+
+      if (counter) {
+        counter.textContent = `${current + 1}/${imgs.length}`;
+      }
+
+      if (instruction) {
+        instruction.textContent = imgs[current].alt || '';
+      }
+
+      if (!hasStarted) {
+        carousel.classList.add('started');
+        hasStarted = true;
+      }
+    });
+  });
+
+
+document.querySelectorAll<HTMLElement>('[data-caption]').forEach((caption) => {
+  const content = caption.querySelector<HTMLElement>('[data-caption-content]');
+  const toggle = caption.querySelector<HTMLButtonElement>('[data-caption-toggle]');
+
+  if (!content || !toggle) return;
+
+  const isOverflowing = content.scrollHeight > content.clientHeight + 1;
+
+  if (!isOverflowing) return;
+
+  toggle.hidden = false;
+
+  toggle.addEventListener('click', () => {
+    const isOpen = caption.classList.toggle('is-open');
+    toggle.textContent = isOpen ? 'Click to hide caption' : 'Click to show full caption';
+  });
+});
+</script>

@@ -6,21 +6,13 @@ rank: 3
 published: true
 
 images:
-  - src: "/images/notes/2024/00-epfl-series/cover.jpg"
+  - src: "/images/notes/epfl-series/cover_low-1-2.jpg"
     alt: "The EPFL Series"
     caption: "The EPFL Series"
 ---
 
-In the last year of architecture studies at the *Ecole Polytechnique Fédérale de Lausanne*, students undertake a research called *énoncé théorique*.
-
-This task opens questions about the role of research in architecture and its possible forms.
-
-It introduces writing as one tool among others within the architectural project.
-
-Standing between education and practice, these texts operate within a degree of abstraction.
-
-They aim to define a shared knowledge as cultural common ground.
-
-Rather than a support for argument, text is understood as a specific tool with its own rules.
-
-It allows research to be undertaken with *conviction, passion and precision*.
+In the last year of architecture studies at the Ecole Polytechnique Fédérale de Lausanne, students are asked to undertake a research called *énoncé théorique*. A task astonishingly open in terms of what it can contain and about the form it should take.
+This paves the way to the questioning of the role research has, or could have, in the architectural discipline and ultimately brings writing as one amongst other tools for the project.
+Of course we stand here in a difficult position for we lie on the threshold between education and practice. And for a writing probably never really exists on its own right—or never exists without a practice so to say—the following texts are necessarily making use of a certain degree of abstraction.
+Indeed by suggesting hypothetical takes on an architect writing, this series aims to define a shared knowledge as cultural common ground.
+Hence, rather than seeing the text as a crutch for ones own argument, it is understood as a specific tool amongst others, with its rules and goals, eventually allowing research to be undertaken with all the more conviction, passion and precision. 

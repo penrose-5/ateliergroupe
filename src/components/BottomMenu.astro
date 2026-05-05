@@ -11,29 +11,15 @@ const { activePage } = Astro.props;
 <nav class="bottom-menu" aria-label="Main navigation">
   <div class="bottom-menu-inner">
     <div class="bottom-menu-left">
-      <div class="bottom-menu-identity">
-        <span>{site.name} {site.nameSubtitle}</span>
-        {site.address.map((line) => (
-          <span>{line}</span>
-        ))}
-      </div>
-      <div class="bottom-menu-contact">
-        <span>e — <a href={`mailto:${site.email}`}>{site.email}</a></span>
-        <span>t — <a href={site.phoneHref}>{site.phone}</a></span>
-      </div>
+        <a href={`mailto:${site.email}`}><u>email</u></a>
     </div>
+
+    <div class="bottom-menu-center">
+      <a href="/" aria-current="page">{site.name}</a>
+    </div>
+
     <div class="bottom-menu-right">
-      <a
-        href="/about"
-        data-text="ABOUT"
-        {...(activePage === 'about' ? { 'aria-current': 'page' } : {})}
-      >ABOUT</a>
-      <span class="separator">/</span>
-      <a
-        href="/notes"
-        data-text="NOTES"
-        {...(activePage === 'notes' ? { 'aria-current': 'page' } : {})}
-      >NOTES</a>
+      <a href={site.phoneHref}><u>tel</u></a>
     </div>
   </div>
 </nav>

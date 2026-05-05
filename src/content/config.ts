@@ -1,15 +1,15 @@
 import { defineCollection, z } from 'astro:content';
 
-const news = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    date: z.string().optional(),
-    displayDate: z.string().optional(),
-    rank: z.number(),
-    published: z.boolean().default(true),
-  }),
-});
+// const projects = defineCollection({
+//   type: 'content',
+//   schema: z.object({
+//     title: z.string(),
+//     date: z.string().optional(),
+//     displayDate: z.string().optional(),
+//     rank: z.number(),
+//     published: z.boolean().default(true),
+//   }),
+// });
 
 const people = defineCollection({
   type: 'content',
@@ -46,4 +46,4 @@ const notes = defineCollection({
   }),
 });
 
-export const collections = { news, people, notes };
+export const collections = { people, notes };

@@ -1,38 +1,39 @@
 ---
 import VersoLayout from '../layouts/VersoLayout.astro';
-import NewsList from '../components/NewsList.astro';
 import ProjectsList from '../components/ProjectsList.astro';
 import PeopleList from '../components/PeopleList.astro';
+import OfficeDetails from '../components/OfficeDetails.astro';
+import atelierImage from '../assets/ATELIERGROUPE_000.jpg';
 
 const aboutStatement = `ATELIERGROUPE is an architecture practice based in Geneva, Switzerland.
 
 Given the contemporary condition of overwhelming information, ATELIERGROUPE aims to define precise operational strategies to achieve a voluntary, deliberate and non-random transformation of our environment.
-
-In order to organize the project, ATELIERGROUPE is taking <a href="/notes">notes from architecture*</a>, using it as a tool able to define the context and to formalize the given.
-
-Eventually, the projects are intentionally cultural, as mise en scène in relation to the territory it engages, defined by both its ambitious character and the obstacles it has to tackle.`;
+In order to organize the project, ATELIERGROUPE is taking <a href="/notes" target="_blank">notes from architecture*</a>, using it as a tool able to define the context and to formalize the given.
+Eventually, the projects are intentionally cultural, as <i>mise en scène</i> in relation to the territory it engages, defined by both its ambitious character and the obstacles it has to tackle.`;
 ---
 
 <VersoLayout title="About — ATELIERGROUPE" activePage="about">
-  <h1 class="section-label">ABOUT</h1>
-  <div class="body-text">
-    {aboutStatement.split('\n\n').map((para) => (
-      <p set:html={para} />
-    ))}
+  <div class="about-page">
+    <div class="body-text">
+      {aboutStatement.split('\n\n').map((para) => (
+        <p set:html={para} />
+      ))}
+    </div>
+
+    <figure class="about-image">
+      <img src={atelierImage.src} alt="ATELIERGROUPE" />
+    </figure>
+
+    <div class="meta-text">
+      <ProjectsList />
+    </div>
+
+    <div class="meta-text">
+      <p class="person-intro">ATELIERGROUPE is Frederik Dahlqvist, Albin Mehmeti and Alexander Wegener.</p>
+      <PeopleList />
+    </div>
   </div>
 
-  <h2 class="section-label">NEWS</h2>
-  <div class="meta-text">
-    <NewsList />
-  </div>
+<OfficeDetails/>
 
-  <h2 class="section-label">PROJECTS</h2>
-  <div class="meta-text">
-    <ProjectsList />
-  </div>
-
-  <h2 class="section-label">OFFICE</h2>
-  <div class="meta-text">
-    <PeopleList />
-  </div>
 </VersoLayout>

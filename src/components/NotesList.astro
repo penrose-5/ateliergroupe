@@ -30,9 +30,17 @@ const sorted = allNotes.sort((a, b) => a.data.rank - b.data.rank);
               />
             ))}
           </div>
+
           <div class="carousel-info">
             <span class="carousel-counter">1/{images.length}</span>
-            <span class="carousel-instruction">* {instruction}</span>
+            <span class:list={[
+              'carousel-instruction',
+              { 'is-static': images.length === 1 }
+            ]}>
+              {images.length === 1
+                ? images[0].alt
+                : `* ${instruction}`}
+            </span>
           </div>
         </div>
       )}
@@ -54,18 +62,34 @@ const sorted = allNotes.sort((a, b) => a.data.rank - b.data.rank);
   document.querySelectorAll('[data-carousel]').forEach((carousel) => {
     const imgs = carousel.querySelectorAll<HTMLImageElement>('.carousel-img');
     const counter = carousel.querySelector('.carousel-counter');
+    const instruction = carousel.querySelector('.carousel-instruction');
     const stage = carousel.querySelector('.carousel-stage') as HTMLElement | null;
+
     if (!stage || imgs.length <= 1) return;
 
     let current = 0;
+    let hasStarted = false;
+
     stage.style.cursor = 'pointer';
 
     stage.addEventListener('click', () => {
       imgs[current].classList.remove('active');
+
       current = (current + 1) % imgs.length;
+
       imgs[current].classList.add('active');
+
       if (counter) {
         counter.textContent = `${current + 1}/${imgs.length}`;
+      }
+
+      if (instruction) {
+        instruction.textContent = imgs[current].alt || '';
+      }
+
+      if (!hasStarted) {
+        carousel.classList.add('started');
+        hasStarted = true;
       }
     });
   });

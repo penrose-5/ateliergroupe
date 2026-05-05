@@ -1,0 +1,56 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+}
+
+const {
+  title = 'ATELIERGROUPE',
+  description = 'ATELIERGROUPE – ARCHITECTES EPFL is an architecture practice founded in Geneva by Frederik Dahlqvist, Albin Mehmeti and Alexander Wegener.',
+  image = '/meta/og-image.webp',
+  type = 'website',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const imageURL = new URL(image, Astro.site);
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="index, follow" />
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content="architecture, ATELIERGROUPE, Switzerland, EPFL, Lausanne, Genève" />
+<link rel="canonical" href={canonicalURL} />
+
+<link rel="icon" type="image/png" sizes="16x16" href="/meta/icon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/meta/icon-32x32.png" />
+<link rel="icon" type="image/png" sizes="64x64" href="/meta/icon-64x64.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/meta/icon-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/meta/icon-512x512.png" />
+<link rel="apple-touch-icon" href="/meta/apple-touch-icon.png" />
+
+<meta property="og:title" content="ATELIERGROUPE — ARCHITECTES EPFL" />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageURL} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content="ATELIERGROUPE" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ATELIERGROUPE — ARCHITECTES EPFL" />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageURL} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'ATELIERGROUPE',
+  url: 'https://ateliergroupe.ch',
+  logo: 'https://ateliergroupe.ch/meta/icon-512x512.png',
+})} />

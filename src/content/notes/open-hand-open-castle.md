@@ -45,10 +45,4 @@ pdf: "https://ia-living-archives-2021.s3-zh.os.switch.ch/filer_public/db/2f/db2f
 pdfLabel: "Download the book Open Hand, Open Castle (PDF)"
 ---
 
-The book presents a double portrait: on one side we have *Manfredo Tafuri* offering critical tools to approach contemporaneity.
-
-On the other, fragments of *Le Corbusier* are used to observe their resolution into architectural form.
-
-*Open Hand Open Castle* compiles notes forming an argument on ideology and form.
-
-It seeks to establish a new relationship between the *chose humaine*, the social stance, and architectural culture.
+The book presents a double portrait: on one side we have Manfredo Tafuri offering us the critical tools to approach contemporaneity, on the other we take fragments of Le Corbusier to witness their resolution into the project of architecture. Open Hand Open Castle compiles a collection of notes making an argument on ideology and form, with the aim to find a new link between the *chose humaine*, the social stance and the culture of architecture.

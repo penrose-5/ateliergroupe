@@ -5,13 +5,14 @@ import BottomMenu from '../components/BottomMenu.astro';
 interface Props {
   title: string;
   description?: string;
+  image?: string;
   activePage: 'about' | 'notes';
 }
 
-const { title, description, activePage } = Astro.props;
+const { title, description, image, activePage } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} image={image}>
   <main id="main-content" class="verso-main">
     <div class="column">
       <slot />
