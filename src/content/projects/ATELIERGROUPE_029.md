@@ -1,5 +1,5 @@
 ---
-title: "title (optional)"
+title:
 date:
 displayDate:
 rank: 29
@@ -8,8 +8,10 @@ pinned: false
 
 images:
   - src: "/images/projects/ATELIERGROUPE_029/ATELIERGROUPE_029_biennale lugano_B001.jpg"
-    alt: "029 — image 1"
+    alt: "Lugano Biennale"
+  - src: "/images/projects/ATELIERGROUPE_029/ATELIERGROUPE_029_biennale lugano_B002.jpg"
+    alt: "Lugano Biennale"
+  - src: "/images/projects/ATELIERGROUPE_029/ATELIERGROUPE_029_biennale lugano_B003.jpg"
+    alt: "Lugano Biennale"
 
 ---
-
-Caption

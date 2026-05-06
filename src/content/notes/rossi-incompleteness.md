@@ -1,5 +1,6 @@
 ---
 title: "ROSSI’S INCOMPLETNESS"
+id: rossi-incompleteness
 subtitle: "A theoretical essay without theories"
 date: "2025-03-07"
 displayDate: "March, 2025"

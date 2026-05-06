@@ -1,13 +1,11 @@
 ---
 title: "OPEN HAND, OPEN CASTLE"
+id: open-hand-open-castle
 subtitle: "Notes from architecture 1"
 date: "2024-01-01"
 displayDate: "January, 2024"
 rank: 4
 published: true
-
-carousel: true
-carouselInstruction: "Click on the image to carousel them"
 
 images:
   - src: "/images/notes/open-hand-open-castle/00-cover.jpg"

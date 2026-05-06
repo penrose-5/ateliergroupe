@@ -1,5 +1,5 @@
 ---
-title: "title (optional)"
+title:
 date:
 displayDate:
 rank: 11.1
@@ -8,8 +8,7 @@ pinned: false
 
 images:
   - src: "/images/projects/ATELIERGROUPE_011.1/ATELIERGROUPE_011A.1_the-positive-large_B002.jpg"
-    alt: "011.1 — image 1"
+    alt: "The Positive Large"
 
 ---
 
-Caption

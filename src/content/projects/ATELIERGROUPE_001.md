@@ -1,5 +1,5 @@
 ---
-title: "title (optional)"
+title:
 date:
 displayDate:
 rank: 1
@@ -8,8 +8,7 @@ pinned: false
 
 images:
   - src: "/images/projects/ATELIERGROUPE_001/ATELIERGROUPE_001_project room_B001.jpg"
-    alt: "001 — image 1"
+    alt: "Project Room"
 
 ---
 
-Caption avec du text

@@ -1,5 +1,5 @@
 ---
-title: "title (optional)"
+title:
 date:
 displayDate:
 rank: 11.2
@@ -8,14 +8,14 @@ pinned: false
 
 images:
   - src: "/images/projects/ATELIERGROUPE_011.2/ATELIERGROUPE_011A.2_the-positive-large_B001.jpg"
-    alt: "0011.2 — image 1"
+    alt: "Théâtre, St-Saphorin"
 
   - src: "/images/projects/ATELIERGROUPE_011.2/ATELIERGROUPE_011A.2_the-positive-large_B002.jpg"
-    alt: "0011.2 — image 2"
+    alt: "Gachette Door – Théâtre, St-Saphorin"
 
   - src: "/images/projects/ATELIERGROUPE_011.2/ATELIERGROUPE_011A.2_the-positive-large_B003.jpg"
-    alt: "0011.2 — image 3"
+    alt: "Colonne Cadre – Théâtre, St-Saphorin"
 
 ---
 
-Caption
+<a href="/notes#colonne-cadre" target="_blank">Colonne-Cadre +</a>

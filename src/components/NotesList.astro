@@ -8,10 +8,8 @@ const sorted = allNotes.sort((a, b) => a.data.rank - b.data.rank);
 {sorted.map(async (note) => {
   const { Content } = await note.render();
   const images = note.data.images || [];
-  const instruction = note.data.carouselInstruction || 'Click on the image to carousel them';
-
   return (
-    <section class="note-full">
+    <section id={note.data.id} class="note-full">
       <header class="note-full-header">
         <h2 class="note-full-title">{note.data.title}</h2>
         {note.data.displayDate && <p class="note-full-date">{note.data.displayDate}</p>}
@@ -33,13 +31,8 @@ const sorted = allNotes.sort((a, b) => a.data.rank - b.data.rank);
 
           <div class="carousel-info">
             <span class="carousel-counter">1/{images.length}</span>
-            <span class:list={[
-              'carousel-instruction',
-              { 'is-static': images.length === 1 }
-            ]}>
-              {images.length === 1
-                ? images[0].alt
-                : `* ${instruction}`}
+            <span class:list={["carousel-instruction", { "is-static": images.length === 1 }]}>
+              {images[0].alt}
             </span>
           </div>
         </div>

@@ -1,5 +1,6 @@
 ---
 title: "ADOLF LOOS"
+id: adolf-loos
 subtitle: "Notes from architecture 3"
 date: "2024-01-01"
 displayDate: "January, 2024"

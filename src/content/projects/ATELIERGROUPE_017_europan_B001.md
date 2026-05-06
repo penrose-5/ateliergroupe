@@ -1,6 +1,6 @@
 ---
-title: "Genève: Paysage Exposé"
-sub: "EUROPAN SPECIAL MENTION 2025"
+title: "NEWS: Special mention, Europan 18, competition"
+sub: "Genève – Paysage Exposé"
 date:
 displayDate:
 rank: 17
@@ -9,19 +9,19 @@ pinned: true
 
 images:
   - src: "/images/projects/ATELIERGROUPE_017_europan_B001/ATELIERGROUPE_017_europan_B001.jpg"
-    alt: "Europan 2025 — image 1"
+    alt: "Europan 18, Genève"
   - src: "/images/projects/ATELIERGROUPE_017_europan_B001/ATELIERGROUPE_017_europan_B002.jpg"
-    alt: "Europan 2025 — image 2"
+    alt: "Europan 18, Genève"
   - src: "/images/projects/ATELIERGROUPE_017_europan_B001/ATELIERGROUPE_017_europan_B003.jpg"
-    alt: "Europan 2025 — image 3"
+    alt: "Europan 18, Genève"
   - src: "/images/projects/ATELIERGROUPE_017_europan_B001/ATELIERGROUPE_017_europan_B004.jpg"
-    alt: "Europan 2025 — image 4"
+    alt: "Europan 18, Genève"
   - src: "/images/projects/ATELIERGROUPE_017_europan_B001/ATELIERGROUPE_017_europan_B005.jpg"
-    alt: "Europan 2025 — image 5"
+    alt: "Europan 18, Genève"
   - src: "/images/projects/ATELIERGROUPE_017_europan_B001/ATELIERGROUPE_017_europan_B006.jpg"
-    alt: "Europan 2025 — image 6"
+    alt: "Europan 18, Genève"
   - src: "/images/projects/ATELIERGROUPE_017_europan_B001/ATELIERGROUPE_017_europan_B007.jpg"
-    alt: "Europan 2025 — image 7"
+    alt: "Europan 18, Genève"
 ---
 
-Europan, 2025 — Special Mention.
+<a href="https://www.europan-europe.eu/fr/session/europan-18/results/by-sites/geneve-ch" target="_blank">Link to Special Mention</a>

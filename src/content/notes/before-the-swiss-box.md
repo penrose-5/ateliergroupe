@@ -1,5 +1,6 @@
 ---
 title: "BEFORE THE SWISS BOX"
+id: before-the-swiss-box
 subtitle: "Notes from architecture 2"
 date: "2024-01-01"
 displayDate: "January, 2024"

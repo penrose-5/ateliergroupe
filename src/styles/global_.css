@@ -39,7 +39,6 @@ a {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-
 a:hover {
   opacity: 0.6;
   transition: opacity 150ms;
@@ -162,17 +161,16 @@ a:hover {
 
 /* --- Note full display (projects index + individual pages) --- */
 .project-full {
-  margin-bottom: 7rem;
+  margin-bottom: 4rem;
 }
 
 .project-full-header {
   text-align: center;
-  margin-bottom: -0.2rem;
+  margin-bottom: 2rem;
 }
 
 
-.project-full-title,
-.project-full-subtitle {
+.project-full-title, .project-full-subtitle {
   font-size: 1.3rem;
   font-weight: 500;
   /* letter-spacing: 0.02em; */
@@ -183,12 +181,7 @@ a:hover {
 @media (max-width: 767px) {
   .project-full-header {
     margin-bottom: 0rem;
-  }
-
-  .project-full-title,
-  .project-full-subtitle {
-    font-size: 1.05rem;
-  }
+}
 }
 
 .project-full-date {
@@ -306,15 +299,18 @@ a:hover {
 }
 
 .carousel-counter {
-  color: #555;
+  color: #111;
 }
 
 .carousel-instruction {
   color: #555;
+  font-style: italic;
+}
+
+.carousel.started .carousel-instruction {
   font-style: normal;
 }
 
-.carousel.started .carousel-instruction,
 .carousel-instruction.is-static {
   font-style: normal;
 }
@@ -358,12 +354,9 @@ a:hover {
 
 /* --- People / office --- */
 .person-intro {
-    text-align: justify;
   /* margin: 0 0 1.5rem; */
   margin-top: 5rem;
   margin-bottom: 2rem;
-  hyphens: auto;
-  -webkit-hyphens: auto;
 }
 
 .person {

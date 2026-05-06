@@ -11,12 +11,11 @@ const sorted = allProjects.sort((a, b) =>
 {sorted.map(async (project) => {
   const { Content } = await project.render();
   const images = project.data.images || [];
-  const instruction = project.data.carouselInstruction || 'Click on the image to carousel them';
-
   return (
     <section class="project-full">
       <header class="project-full-header">
         <h2 class="project-full-title">{project.data.title}</h2>
+        <h3 class="project-full-subtitle">{project.data.sub}</h3>
         {project.data.displayDate && <p class="project-full-date">{project.data.displayDate}</p>}
       </header>
 
@@ -36,13 +35,8 @@ const sorted = allProjects.sort((a, b) =>
 
           <div class="carousel-info">
             <span class="carousel-counter">1/{images.length}</span>
-            <span class:list={[
-              'carousel-instruction',
-              { 'is-static': images.length === 1 }
-            ]}>
-              {images.length === 1
-                ? images[0].alt
-                : `* ${instruction}`}
+            <span class:list={["carousel-instruction", { "is-static": images.length === 1 }]}>
+              {images[0].alt}
             </span>
           </div>
         </div>
@@ -54,7 +48,7 @@ const sorted = allProjects.sort((a, b) =>
         </div>
 
         <button class="caption-toggle" data-caption-toggle hidden type="button">
-          Click to show full caption
+          (…)
         </button>
       </div>
 
@@ -118,7 +112,7 @@ document.querySelectorAll<HTMLElement>('[data-caption]').forEach((caption) => {
 
   toggle.addEventListener('click', () => {
     const isOpen = caption.classList.toggle('is-open');
-    toggle.textContent = isOpen ? 'Click to hide caption' : 'Click to show full caption';
+    toggle.textContent = isOpen ? '( – )' : '(…)';
   });
 });
 </script>

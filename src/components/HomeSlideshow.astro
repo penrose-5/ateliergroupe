@@ -14,7 +14,10 @@ const imageModules = import.meta.glob<{ default: ImageMetadata }>(
   { eager: true }
 );
 
-const images = Object.values(imageModules).map((mod) => mod.default);
+const images = Object.entries(imageModules).map(([path, mod]) => ({
+  ...mod.default,
+  filename: path.split('/').pop() ?? '',
+}));
 ---
 
 {images.length > 0 ? (
@@ -27,6 +30,7 @@ const images = Object.values(imageModules).map((mod) => mod.default);
         alt={`ATELIERGROUPE — photograph ${i + 1}`}
         loading="eager"
         decoding="async"
+        data-filename={img.filename}
       />
     ))}
   </div>
@@ -65,8 +69,17 @@ const images = Object.values(imageModules).map((mod) => mod.default);
       let order = buildOrder();
       let pos = 0;
 
+      const darkImageFilename = 'ATELIERGROUPE_013_city-bar_001.webp';
+
+      function updateWordmarkColor(activeIndex: number) {
+        const activeImg = imgs[activeIndex];
+        const isDarkImage = activeImg?.dataset.filename === darkImageFilename;
+        document.documentElement.classList.toggle('wordmark-white', isDarkImage);
+      }
+
       // Show initial image
       imgs[order[0]].classList.add('active');
+      updateWordmarkColor(order[0]);
 
       // Reduced motion: pick random image, do not cycle
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -82,7 +95,8 @@ const images = Object.values(imageModules).map((mod) => mod.default);
         const next = order[pos];
         imgs[current].classList.remove('active');
         imgs[next].classList.add('active');
-      }, 7000);
+        updateWordmarkColor(next);
+      }, 5000);
     }
 
     initSlideshow();
@@ -95,3 +109,15 @@ const images = Object.values(imageModules).map((mod) => mod.default);
     </p>
   </div>
 )}
+
+
+<style is:global>
+  .wordmark {
+    transition: color 400ms ease, fill 400ms ease;
+  }
+
+  html.wordmark-white .wordmark {
+    color: #fff;
+    fill: #fff;
+  }
+</style>

@@ -8,8 +8,7 @@ pinned: false
 
 images:
   - src: "/images/projects/ATELIERGROUPE_005/ATELIERGROUPE_005_les-avanchets_B001.jpg"
-    alt: "005 — image 1"
+    alt: "Maison de quartier, Les Avanchets"
 
 ---
 
-Caption

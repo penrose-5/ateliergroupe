@@ -1,5 +1,6 @@
 ---
 title: "COLONNE-CADRE"
+id: colonne-cadre
 subtitle: "Incompleteness as a design strategy"
 date: "2025-03-07"
 displayDate: "March, 2025"

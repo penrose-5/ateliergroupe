@@ -1,5 +1,6 @@
 ---
 title: "NOTES FROM ARCHITECTURE"
+id: notes-from-architecture
 date: "2024-01-01"
 displayDate: "January, 2024"
 rank: 3
